@@ -17,20 +17,22 @@ def toon_bord(spelbord):
 def vraag_doe_zet(spelbord, speler):
     toon_bord(spelbord)
     veld = input("Op welk veld wil je iets zetten? ")
-    while rij_kolom_controle(int(veld[0]), int(veld[1]), spelbord):
+    veld = [int(veld[0]) - 1, int(veld[1]) - 1]
+    while not rij_kolom_controle(int(veld[0]), int(veld[1]), spelbord):
         veld = input("Error, veld bestaat niet, probeer opnieuw")
-    veld = [int(veld[0])-1, int(veld[1])-1]
+        veld = [int(veld[0])-1, int(veld[1])-1]
     while not spelbord[veld[1]][veld[0]] == " ":
         print("Error, veld is al bezet")
         veld = input("Op welk veld wil je iets zetten? ")
+        veld = [int(veld[0]) - 1, int(veld[1]) - 1]
         while rij_kolom_controle(int(veld[0]), int(veld[1]), spelbord):
             veld = input("Error, veld bestaat niet, probeer opnieuw")
-        veld = [int(veld[0]) - 1, int(veld[1]) - 1]
+            veld = [int(veld[0]) - 1, int(veld[1]) - 1]
     spelbord[veld[1]][veld[0]] = speler
 
 
 def rij_kolom_controle(rij, kolom, spelbord):
-    return len(spelbord[0]) <= kolom <= 1 and len(spelbord) <= rij <= 1
+    return len(spelbord[0])-1 >= kolom >= 0 and len(spelbord)-1 >= rij >= 0
 
 
 def check_winaar(spelbord):
