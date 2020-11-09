@@ -13,4 +13,19 @@ def deel_kaarten():
             level = randbelow(len(nog_beschikbare_kaarten[shape]))
             deling[j].append(nog_beschikbare_kaarten[shape].pop(level))
     return deling
-deling = deel_kaarten()
+
+def geef_kaarten(delinglijst):
+    kaarten = [[], [], [], []]
+    for i in range(3, -1, -1):
+        print(delinglijst[i])
+        for j in range(3):
+            kaarten[i].append(delinglijst.pop(int(input("Welke index kaart wil je doorgeven?")) - 1))
+    for i in range(4):
+        for j in range(3):
+            delinglijst[i].append(kaarten[i][j])
+
+def main():
+    deling = deel_kaarten()  # Elke lijst in deling is voor 1 speler
+    geef_kaarten(deling)  # hier worden de kaarten doorgegeven
+    for i in range(4):
+        print(deling[i])
