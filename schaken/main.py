@@ -1,2 +1,2 @@
 import os
-os.system("python3 sunfish-master/sunfish.py")
+os.system("python3 schaken/sunfish-master/sunfish.py")
