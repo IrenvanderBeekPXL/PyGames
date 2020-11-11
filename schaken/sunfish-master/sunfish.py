@@ -1,7 +1,7 @@
 #!/usr/bin/env pypy
 # -*- coding: utf-8 -*-
-
 from __future__ import print_function
+input("WARNING! This chess program is very strong. Press enter to continue")
 import re, sys, time
 from itertools import count
 from collections import namedtuple
