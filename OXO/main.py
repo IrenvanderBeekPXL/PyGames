@@ -25,7 +25,7 @@ def vraag_doe_zet(spelbord, speler):
         print("Error, veld is al bezet")
         veld = input("Op welk veld wil je iets zetten? ")
         veld = [int(veld[0]) - 1, int(veld[1]) - 1]
-        while rij_kolom_controle(int(veld[0]), int(veld[1]), spelbord):
+        while not rij_kolom_controle(int(veld[0]), int(veld[1]), spelbord):
             veld = input("Error, veld bestaat niet, probeer opnieuw")
             veld = [int(veld[0]) - 1, int(veld[1]) - 1]
     spelbord[veld[1]][veld[0]] = speler
