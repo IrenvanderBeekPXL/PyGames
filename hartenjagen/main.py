@@ -53,8 +53,26 @@ def main():
                 pot.append(deling[j].pop(int(input("Welk index kaart wil je neerleggen?"))-1))
                 hide_cards()
         picker = starter
+        letter = pot[0][0]
+        highest = 2
         for j in range(4):
-            # Hier hoort een systeem om te checken wie is gewonnen
+            # Hier hoort een systeem om te checken wie de kaarten neemt
+            if pot[j][1:] == "10":
+                pot[j] = pot[j][0] + ">"
+            elif pot[j][1] == "A":
+                pot[j] = pot[j][0] + "S"
+            elif pot[j][1] == "K":
+                pot[j] = pot[j][0] + "R"
+
+            if letter == pot[j][0] and ord(pot[j][1]) > highest:
+                picker = starter - j
+        for j in range(4):
+            if pot[j][0] == "H":
+                strafpunten[picker] += 1
+            elif pot[j] == "SQ":
+                strafpunten[picker] += 13
+    for i in range(starter, starter-4, -1):
+        print("player", i, "has", strafpunten[i], "bad points")
 
 
 if __name__ == '__main__':
