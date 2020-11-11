@@ -399,7 +399,7 @@ def print_pos(pos):
                   'r':'BR', 'n':'BN', 'b':'BB', 'q':'BQ', 'k':'BK', 'p':'BP', '.':'· '}
     for i, row in enumerate(pos.board.split()):
         print(' ', 8-i, ' '.join(uni_pieces.get(p, p) for p in row))
-    print('    a b c d e f g h \n\n')
+    print('    a  b  c  d  e  f  g  h \n\n')
 
 
 def main():
