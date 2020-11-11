@@ -21,18 +21,40 @@ def geef_kaarten(delinglijst):
         for j in range(3):
             print(delinglijst[i])
             kaarten[i].append(delinglijst[i].pop(int(input("Welke index kaart wil je doorgeven?")) - 1))
-        for j in range(500):
-            print()
+        hide_cards()
     for i in range(4):
         for j in range(3):
             delinglijst[i].append(kaarten[i][j])
 
 
+def hide_cards():
+    input("Press enter to hide your cards")
+    for i in range(1000):
+        print()
+    input("Press enter to continue")
+
+
 def main():
     deling = deel_kaarten()  # Elke lijst in deling is voor 1 speler
     geef_kaarten(deling)  # hier worden de kaarten doorgegeven
+    strafpunten = 4 * [0]
     for i in range(4):
-        print(deling[i])
+        if "K2" in deling[i]:
+            starter = i
+    for i in range(13):
+        print("Round", i+1)
+        pot = []
+        for j in range(starter, starter - 4, -1):
+            print(pot)
+            if "K2" in deling[j]:
+                pot.append(deling[j].pop(deling[j].index("K2")))
+            else:
+                print(deling[j])
+                pot.append(deling[j].pop(int(input("Welk index kaart wil je neerleggen?"))-1))
+                hide_cards()
+        picker = starter
+        for j in range(4):
+            # Hier hoort een systeem om te checken wie is gewonnen
 
 
 if __name__ == '__main__':
