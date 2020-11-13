@@ -26,7 +26,8 @@ def main():
     sleep(1)
     print("Maar ze zijn helemaal door elkaar geschud...")
     sleep(1)
-    input("Los jij het probleem op? ")
+    if not input("Los jij het probleem op? ") == "Y":
+        raise ConnectionRefusedError ("Input should be 'Y'")
 
 if __name__ == "__main__":
     main()
