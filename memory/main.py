@@ -1,4 +1,5 @@
 from secrets import randbelow
+from time import sleep
 def schud_kaarten():
     nog_beschikbare_kaarten = [["K2 ", "K3 ", "K4 ", "K5 ", "K6 ", "K7 ", "K8 ", "K9 ", "K10", "KB ", "KQ ", "KK ", "KA "],
                                ["S2 ", "S3 ", "S4 ", "S5 ", "S6 ", "S7 ", "S8 ", "S9 ", "S10", "SB ", "SQ ", "SK ", "SA "],
@@ -21,8 +22,11 @@ def schud_kaarten():
 
 def main():
     spelbord = schud_kaarten()
-    
-
+    print("Het spelbord bevat 52 kaarten...")
+    sleep(1)
+    print("Maar ze zijn helemaal door elkaar geschud...")
+    sleep(1)
+    input("Los jij het probleem op? ")
 
 if __name__ == "__main__":
     main()
