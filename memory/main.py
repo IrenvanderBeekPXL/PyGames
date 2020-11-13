@@ -18,4 +18,10 @@ def schud_kaarten():
             spelbord[j].append(nog_beschikbare_kaarten[shape].pop(level))
     return spelbord
 
-print(schud_kaarten())
+
+def main():
+    spelbord = schud_kaarten()
+
+
+if __name__ == "__main__":
+    main()
