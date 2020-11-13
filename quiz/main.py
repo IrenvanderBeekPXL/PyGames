@@ -58,9 +58,12 @@ def main():
                 print(antwoordenlijst[i][j])
             if input() == goede_antwoorden[i]:
                 punten[teller] += 1
+        teller += 1
         hide()
         naam = input("Hoe heet je? (xxx om te stoppen) ")
     # antwoorden analyseren
     hide()
-    print("De winnaar is", naam[max(punten)])
-    print("De laatste is", naam[min(punten)])
+    print(namen)
+    print(punten)
+
+main()
