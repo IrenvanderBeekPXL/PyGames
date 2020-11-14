@@ -28,6 +28,16 @@ def main():
     sleep(1)
     if not input("Los jij het probleem op? ") == "Y":
         raise ConnectionRefusedError ("Input should be 'Y'")
+    leeg = False
+    while not leeg:
+        print("  ", end="")
+        for i in range(len(spelbord[0])):
+            print(" " + str(i+1), end="  ")
+        print()
+        for i in spelbord:
+            print(i + 1, end=" ")
+            for j in i:
+                print(j, end=" ")
 
 if __name__ == "__main__":
     main()
