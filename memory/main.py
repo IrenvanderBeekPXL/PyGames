@@ -34,9 +34,9 @@ def main():
         for i in range(len(spelbord[0])):
             print(" " + str(i+1), end="  ")
         print()
-        for i in spelbord:
+        for i in range(len(spelbord)):
             print(i + 1, end=" ")
-            for j in i:
+            for j in spelbord[i]:
                 print(j, end=" ")
 
 if __name__ == "__main__":
