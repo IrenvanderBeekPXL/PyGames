@@ -24,7 +24,7 @@ def main():
     spelbord = schud_kaarten()
     print("Het spelbord bevat 52 kaarten...")
     sleep(1)
-    print("Maar ze zijn helemaal door elkaar geschud...")
+    print("Maar er zijn er 2 helemaal door elkaar geschud...")
     sleep(1)
     if not input("Los jij het probleem op? ") == "Y":
         raise ConnectionRefusedError ("Input should be 'Y'")
