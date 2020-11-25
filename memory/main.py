@@ -19,7 +19,8 @@ def schud_kaarten():
             spelbord[j].append(nog_beschikbare_kaarten[shape].pop(level))
     return spelbord
 
-def print_bord(spelbord):
+def print_bord(spelbord, veld):
+    veld = [int(veld[2:]), int(veld[0])]
     print("  ", end="")
     for i in range(9):
         print(" " + str(i+1), end="   ")
@@ -28,8 +29,13 @@ def print_bord(spelbord):
     print()
     for i in range(len(spelbord)):
         print(i + 1, end=" ")
-        for j in spelbord[i]:
-            print("veld", end=" ")
+        for j in range(len(spelbord[i])):
+            if (j + 1 == veld[0]) and (i + 1 == veld[1]):
+                print(spelbord[i][j])
+            elif spelbord[i][j] == "":
+                print("  ", end="   ")
+            else:
+                print("veld", end=" ")
         print()
     print()
 
@@ -44,8 +50,11 @@ def main():
         raise ConnectionRefusedError ("Input should be 'Y'")
     leeg = False
     while not leeg:
-        print_bord(spelbord)
-        sleep(60)
+        print_bord(spelbord, "00")
+        veld1 = input("Welk veld wil je bekijken? (verticale pos/horizontale pos) ")
+        print_bord(spelbord, veld1)
+        veld2 = input("Welk veld is hetzelfde? (verticale pos/horizontale pos) ")
+        
 
 if __name__ == "__main__":
     main()
