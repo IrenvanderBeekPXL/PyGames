@@ -19,6 +19,12 @@ def schud_kaarten():
             spelbord[j].append(nog_beschikbare_kaarten[shape].pop(level))
     return spelbord
 
+def goed_geraden(spelbord, veld1, veld2):
+    if (spelbord[veld1[0]][veld1[1]] == spelbord[veld2[0]][veld2[1]]):
+        return True
+    else:
+        return False
+
 def print_bord(spelbord, veld):
     veld = [int(veld[2:]), int(veld[0])]
     print("  ", end="")
@@ -54,6 +60,23 @@ def main():
         veld1 = input("Welk veld wil je bekijken? (verticale pos/horizontale pos) ")
         print_bord(spelbord, veld1)
         veld2 = input("Welk veld is hetzelfde? (verticale pos/horizontale pos) ")
+        print_bord(spelbord, veld2)
+        veld1 = [int(veld1[2:]), int(veld1[0])]
+        veld2 = [int(veld2[2:]), int(veld2[0])]
+        if goed_geraden(spelbord, veld1, veld2):
+            print("Match gevonden!")
+            spelbord[veld1[0]][veld1[1]] = ""
+            spelbord[veld2[0]][veld2[1]] = ""
+            aantal_sets_over -= 1
+        else:
+            print("Probeer opnieuw")
+        sleep(5)
+    print("Goed gedaan!")
+    sleep(1)
+    print("De kaartspellen zijn weer gesorteerd!")
+    sleep(1)
+    print("Bedankt voor het spelen!")
+    sleep(1)
 
 
 if __name__ == "__main__":
