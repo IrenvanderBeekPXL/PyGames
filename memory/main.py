@@ -48,13 +48,13 @@ def main():
     sleep(1)
     if not input("Los jij het probleem op? ") == "Y":
         raise ConnectionRefusedError ("Input should be 'Y'")
-    leeg = False
-    while not leeg:
+    aantal_sets_over = 52
+    while aantal_sets_over != 0:
         print_bord(spelbord, "00")
         veld1 = input("Welk veld wil je bekijken? (verticale pos/horizontale pos) ")
         print_bord(spelbord, veld1)
         veld2 = input("Welk veld is hetzelfde? (verticale pos/horizontale pos) ")
-        
+
 
 if __name__ == "__main__":
     main()
