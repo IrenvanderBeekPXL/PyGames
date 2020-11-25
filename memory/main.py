@@ -19,6 +19,20 @@ def schud_kaarten():
             spelbord[j].append(nog_beschikbare_kaarten[shape].pop(level))
     return spelbord
 
+def print_bord(spelbord):
+    print("  ", end="")
+    for i in range(9):
+        print(" " + str(i+1), end="   ")
+    for i in range(9, 13):
+        print(" " + str(i+1), end="  ")
+    print()
+    for i in range(len(spelbord)):
+        print(i + 1, end=" ")
+        for j in spelbord[i]:
+            print("veld", end=" ")
+        print()
+    print()
+
 
 def main():
     spelbord = schud_kaarten()
@@ -30,14 +44,8 @@ def main():
         raise ConnectionRefusedError ("Input should be 'Y'")
     leeg = False
     while not leeg:
-        print("  ", end="")
-        for i in range(len(spelbord[0])):
-            print(" " + str(i+1), end="  ")
-        print()
-        for i in range(len(spelbord)):
-            print(i + 1, end=" ")
-            for j in spelbord[i]:
-                print(j, end=" ")
+        print_bord(spelbord)
+        sleep(60)
 
 if __name__ == "__main__":
     main()
