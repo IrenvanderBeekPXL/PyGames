@@ -37,7 +37,7 @@ def print_bord(spelbord, veld):
         print(i + 1, end=" ")
         for j in range(len(spelbord[i])):
             if (j + 1 == veld[0]) and (i + 1 == veld[1]):
-                print(spelbord[i][j])
+                print(spelbord[i][j], end="   ")
             elif spelbord[i][j] == "":
                 print("  ", end="   ")
             else:
