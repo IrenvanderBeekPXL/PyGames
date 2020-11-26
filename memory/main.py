@@ -20,7 +20,7 @@ def schud_kaarten():
     return spelbord
 
 def goed_geraden(spelbord, veld1, veld2):
-    if (spelbord[veld1[0]][veld1[1]] == spelbord[veld2[0]][veld2[1]]):
+    if (spelbord[veld1[1]][veld1[0]] == spelbord[veld2[1]][veld2[0]]):
         return True
     else:
         return False
@@ -65,8 +65,8 @@ def main():
         veld2 = [int(veld2[2:])-1, int(veld2[0])-1]
         if goed_geraden(spelbord, veld1, veld2):
             print("Match gevonden!")
-            spelbord[veld1[0]][veld1[1]] = ""
-            spelbord[veld2[0]][veld2[1]] = ""
+            spelbord[veld1[1]][veld1[0]] = ""
+            spelbord[veld2[1]][veld2[0]] = ""
             aantal_sets_over -= 1
         else:
             print("Probeer opnieuw")
