@@ -56,7 +56,7 @@ def main():
         raise ConnectionRefusedError ("Input should be 'Y'")
     aantal_sets_over = 52
     while aantal_sets_over != 0:
-        print_bord(spelbord, "00")
+        print_bord(spelbord, "0/0")
         veld1 = input("Welk veld wil je bekijken? (verticale pos/horizontale pos) ")
         print_bord(spelbord, veld1)
         veld2 = input("Welk veld is hetzelfde? (verticale pos/horizontale pos) ")
