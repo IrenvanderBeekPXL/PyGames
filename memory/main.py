@@ -37,7 +37,7 @@ def print_bord(spelbord, veld):
         print(i + 1, end=" ")
         for j in range(len(spelbord[i])):
             if (j + 1 == veld[0]) and (i + 1 == veld[1]):
-                print(spelbord[i][j], end="   ")
+                print(spelbord[i][j], end="  ")
             elif spelbord[i][j] == "":
                 print("  ", end="   ")
             else:
@@ -61,8 +61,8 @@ def main():
         print_bord(spelbord, veld1)
         veld2 = input("Welk veld is hetzelfde? (verticale pos/horizontale pos) ")
         print_bord(spelbord, veld2)
-        veld1 = [int(veld1[2:]), int(veld1[0])]
-        veld2 = [int(veld2[2:]), int(veld2[0])]
+        veld1 = [int(veld1[2:])-1, int(veld1[0])-1]
+        veld2 = [int(veld2[2:])-1, int(veld2[0])-1]
         if goed_geraden(spelbord, veld1, veld2):
             print("Match gevonden!")
             spelbord[veld1[0]][veld1[1]] = ""
