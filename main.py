@@ -2,7 +2,7 @@
 
 import os
 games = ["hartenjagen", "memory", "OXO", "quiz", "schaken", "zeeslag"]
-print("Welcome to PyGames")
+print("Welcome to TerminalGames")
 print("Some games only work on 1920 * 1080 resolution")
 print("Copy one of the following games")
 for i in games:

@@ -1,4 +1,4 @@
-# PyGames
+# TerminalGames
 PyGames is a gaming center made in python
 # How to install (for Windows 10)
 Go to the Microsoft Store and search for "Python 3.8". Go to the Python 3.8 program, and press "Install". You can log in with your Microsoft account, but you don't have to. Next, download the git repository as a zip file, unzip, run main.py, and enjoy your games!
