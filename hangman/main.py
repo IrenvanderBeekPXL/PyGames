@@ -29,7 +29,12 @@ def main():
         letter = input("Which letter is in the word? ")
         while len(letter) != 1:
             letter = input("Error, try again. Which letter is in the word? ")
-        
+        make_found_letters_visible(letter, wrong_letters, word, visible_letters)
+        if len(wrong_letters) == 9:
+            raise ConnectionAbortedError ("Hangman died.")
+    print("Word found!")
+    print("The word was:")
+    print_found_letters(visible_letters)
 
 if __name__ == "__main__":
     main()
