@@ -9,6 +9,7 @@ def make_found_letters_visible(letter, wrong_letters, word, visible_letters):
 def print_found_letters(visible_letters):
     for i in visible_letters:
         print(i, end="")
+    print()
 
 def hide():
     input("Press enter to hide")
@@ -20,7 +21,15 @@ def main():
     # asking for input and hiding it
     word = input("Which word?")
     hide()
-    
+    print("Creating word...")
+    visible_letters = ["_"] * len(word)
+    wrong_letters = []
+    while "_" in visible_letters:
+        print_found_letters(visible_letters)
+        letter = input("Which letter is in the word? ")
+        while len(letter) != 1:
+            letter = input("Error, try again. Which letter is in the word? ")
+        
 
 if __name__ == "__main__":
     main()
