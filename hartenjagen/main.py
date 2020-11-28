@@ -71,7 +71,7 @@ def main():
                 strafpunten[picker] += 1
             elif pot[j] == "SQ":
                 strafpunten[picker] += 13
-        starter = picker
+        starter = (picker + 4) % 4 
     for i in range(starter, starter-4, -1):
         print("player", i, "has", strafpunten[i], "bad points")
 
