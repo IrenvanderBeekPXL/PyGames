@@ -60,6 +60,9 @@ def main():
         veld1 = input("Welk veld wil je bekijken? (verticale pos/horizontale pos) ")
         print_bord(spelbord, veld1)
         veld2 = input("Welk veld is hetzelfde? (verticale pos/horizontale pos) ")
+        while veld1 == veld2:
+            print("velden mogen niet dezelfde positie hebben")
+            veld2 = input("Welk veld is hetzelfde? (verticale pos/horizontale pos) ")
         print_bord(spelbord, veld2)
         veld1 = [int(veld1[2:])-1, int(veld1[0])-1]
         veld2 = [int(veld2[2:])-1, int(veld2[0])-1]
