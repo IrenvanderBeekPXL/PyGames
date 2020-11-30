@@ -12,4 +12,3 @@ def print_board(board, need_to_start):
     for i in board:
         print(i, end="  ")
     print()
-print_board([0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0,0 ,0 ,0 ,0, 0, 0], [1, 1, 1])
