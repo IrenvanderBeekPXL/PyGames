@@ -12,3 +12,13 @@ def print_board(board, need_to_start):
     for i in board:
         print(i, end="  ")
     print()
+
+def move(player, pawn, needs_to_start, board):
+    moves_to_move = dice()
+    # Make a system to get the correct pawn, and move it moves_to_move places towards index -inf
+    # Also store the last number in the variable last_number. You can use print_board for debugging
+    # If moves_to_move is 6, you should get a new pawn on the board
+
+
+    if last_number != 0:
+        needs_to_start[last_number-1] += 1
