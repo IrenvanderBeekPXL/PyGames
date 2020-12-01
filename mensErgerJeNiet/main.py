@@ -22,3 +22,11 @@ def move(player, pawn, needs_to_start, board):
 
     if last_number != 0:
         needs_to_start[last_number-1] += 1
+
+def main():
+    needs_to_start = [4] * 4
+    board = [0] * 40
+    print_board(board, needs_to_start)
+
+if __name__ == "__main__":
+    main()
