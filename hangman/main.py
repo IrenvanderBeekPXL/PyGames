@@ -19,18 +19,20 @@ def hide():
 
 def main():
     # asking for input and hiding it
-    word = input("Which word?")
+    word = input("Which word?").lower()
     hide()
     print("Creating word...")
     visible_letters = ["_"] * len(word)
     wrong_letters = []
+    print("there are", len(word), "letters")
     while "_" in visible_letters:
         print_found_letters(visible_letters)
+        print("You guessed", len(wrong_letters), "letters wrong")
         letter = input("Which letter is in the word? ")
         while len(letter) != 1:
             letter = input("Error, try again. Which letter is in the word? ")
-        make_found_letters_visible(letter, wrong_letters, word, visible_letters)
-        if len(wrong_letters) == 9:
+        make_found_letters_visible(letter.lower(), wrong_letters, word, visible_letters)
+        if len(wrong_letters) == 8:
             raise ConnectionAbortedError ("Hangman died.")
     print("Word found!")
     print("The word was:")
