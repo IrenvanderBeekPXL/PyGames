@@ -18,6 +18,10 @@ def move(player, pawn, needs_to_start, board):
     # Make a system to get the correct pawn, and move it moves_to_move places towards index -inf
     # Also store the last number in the variable last_number. You can use print_board for debugging
     # If moves_to_move is 6, you should get a new pawn on the board
+    # the place to let it start is player * 10 - 8
+    for i in range(pawn):
+        pawn_index = board.index(player, i)
+    
 
 
     if last_number != 0:
