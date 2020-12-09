@@ -19,9 +19,13 @@ def move(player, pawn, needs_to_start, board):
     # Also store the last number in the variable last_number. You can use print_board for debugging
     # If moves_to_move is 6, you should get a new pawn on the board
     # the place to let it start is player * 10 - 8
-    for i in range(pawn):
-        pawn_index = board.index(player, i)
-    
+    def moving(moves_to_move, player, pawn, board):
+        for i in range(pawn):
+            pawn_index = board.index(player, i)
+        last_number = board[pawn_index - moves_to_move]
+        
+
+        return last_number
 
 
     if last_number != 0:
