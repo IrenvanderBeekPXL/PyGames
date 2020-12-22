@@ -51,36 +51,43 @@ def main():
         goede_antwoord = ""
         antwoorden = ["", "", ""]
         antwoorden.insert(randbelow(len(antwoorden)+1), goede_antwoord)
+        antwoordenlijst.append(antwoorden)
 
         vragenlijst.append("")
         goede_antwoord = ""
         antwoorden = ["", "", ""]
         antwoorden.insert(randbelow(len(antwoorden)+1), goede_antwoord)
+        antwoordenlijst.append(antwoorden)
 
         vragenlijst.append("")
         goede_antwoord = ""
         antwoorden = ["", "", ""]
         antwoorden.insert(randbelow(len(antwoorden)+1), goede_antwoord)
+        antwoordenlijst.append(antwoorden)
 
         vragenlijst.append("")
         goede_antwoord = ""
         antwoorden = ["", "", ""]
         antwoorden.insert(randbelow(len(antwoorden)+1), goede_antwoord)
+        antwoordenlijst.append(antwoorden)
         
         vragenlijst.append("")
         goede_antwoord = ""
         antwoorden = ["", "", ""]
         antwoorden.insert(randbelow(len(antwoorden)+1), goede_antwoord)
+        antwoordenlijst.append(antwoorden)
         
         vragenlijst.append("")
         goede_antwoord = ""
         antwoorden = ["", "", ""]
         antwoorden.insert(randbelow(len(antwoorden)+1), goede_antwoord)
+        antwoordenlijst.append(antwoorden)
         
         vragenlijst.append("")
         goede_antwoord = ""
         antwoorden = ["", "", ""]
         antwoorden.insert(randbelow(len(antwoorden)+1), goede_antwoord)
+        antwoordenlijst.append(antwoorden)
 
     hide()
     # antwoorden vragen aan de deelnemers
