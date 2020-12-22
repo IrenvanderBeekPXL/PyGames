@@ -13,24 +13,31 @@ def print_board(board, need_to_start):
         print(i, end="  ")
     print()
 
-def move(player, pawn, needs_to_start, board):
-    moves_to_move = dice()
+def move(player, pawn, needs_to_start, board, moves_to_move):
     # Make a system to get the correct pawn, and move it moves_to_move places towards index -inf
     # Also store the last number in the variable last_number. You can use print_board for debugging
     # If moves_to_move is 6, you should get a new pawn on the board
     # the place to let it start is player * 10 - 8
     def moving(moves_to_move, player, pawn, board):
         for i in range(pawn):
-            pawn_index = board.index(player, i)
-        last_number = board[pawn_index - moves_to_move]
-        board[pawn_index - moves_to_move] = player
-        board[pawn_index] = "."
+            try:
+                pawn_index = board.index(player, i)
+            except:
+                pass
+        try:
+            last_number = board[pawn_index - moves_to_move]
+            board[pawn_index - moves_to_move] = player
+            board[pawn_index] = "."
+        except:
+            last_number = "."
         return last_number
 
     if moves_to_move == 6 and needs_to_start[player] != 0:
         needs_to_start[player] -= 1
-        last_number = board[player * 10 - 8]
-        board[player * 10 - 8] == player
+        last_number = board[player * 10 + 2]
+        board[player * 10 + 2] == player
+        print_board(board, needs_to_start)
+        print(last_number)
     else:
         last_number = moving(moves_to_move, player, pawn, board)    
 
@@ -42,9 +49,11 @@ def main():
     board = ["."] * 40
     while not "." in board or not 0 in needs_to_start:
         for i in range(4):
+            moves_to_move = dice()
             print_board(board, needs_to_start)
+            print("jij hebt", moves_to_move, "gegooid met de dobbelsteen")
             pawn = int(input("Welke pion wil je zetten? (jij bent speler " + str(i) + ") "))
-            move(i, pawn, needs_to_start, board)
+            move(i, pawn, needs_to_start, board, moves_to_move)
 
     print("Spel afgelopen. Alle pionnen zijn verdwenen")
 
