@@ -31,20 +31,57 @@ def main():
     goede_antwoorden = []
     punten = []
     teller = 0
-    # vragen en antwoorden vragen aan de quizmaster
-    vraag = input("Typ een vraag in (xxx om te stoppen) ")
-    while vraag != "xxx" and vraag != "XXX":
-        vragenlijst.append(vraag)
-        antwoorden = []
-        goede_antwoord = input("Wat is het goede antwoord? ")
-        goede_antwoorden.append(goede_antwoord)
-        antwoord = input("Wat is een van de verkeerde antwoorden? ")
-        while antwoord != "xxx" and antwoord != "XXX":
-            antwoorden.append(antwoord)
-            antwoord = input("Wat is een van de verkeerde antwoorden? (xxx om te stoppen) ")
-        antwoorden.insert(randbelow(len(antwoorden)+1), goede_antwoord)
-        antwoordenlijst.append(antwoorden)
+    if input("Wil je de standaardquiz gebruiken? (Y/n)") == "n":
+        # vragen en antwoorden vragen aan de quizmaster
         vraag = input("Typ een vraag in (xxx om te stoppen) ")
+        while vraag != "xxx" and vraag != "XXX":
+            vragenlijst.append(vraag)
+            antwoorden = []
+            goede_antwoord = input("Wat is het goede antwoord? ")
+            goede_antwoorden.append(goede_antwoord)
+            antwoord = input("Wat is een van de verkeerde antwoorden? ")
+            while antwoord != "xxx" and antwoord != "XXX":
+                antwoorden.append(antwoord)
+                antwoord = input("Wat is een van de verkeerde antwoorden? (xxx om te stoppen) ")
+            antwoorden.insert(randbelow(len(antwoorden)+1), goede_antwoord)
+            antwoordenlijst.append(antwoorden)
+            vraag = input("Typ een vraag in (xxx om te stoppen) ")
+    else:
+        vragenlijst.append("")
+        goede_antwoord = ""
+        antwoorden = ["", "", ""]
+        antwoorden.insert(randbelow(len(antwoorden)+1), goede_antwoord)
+
+        vragenlijst.append("")
+        goede_antwoord = ""
+        antwoorden = ["", "", ""]
+        antwoorden.insert(randbelow(len(antwoorden)+1), goede_antwoord)
+
+        vragenlijst.append("")
+        goede_antwoord = ""
+        antwoorden = ["", "", ""]
+        antwoorden.insert(randbelow(len(antwoorden)+1), goede_antwoord)
+
+        vragenlijst.append("")
+        goede_antwoord = ""
+        antwoorden = ["", "", ""]
+        antwoorden.insert(randbelow(len(antwoorden)+1), goede_antwoord)
+        
+        vragenlijst.append("")
+        goede_antwoord = ""
+        antwoorden = ["", "", ""]
+        antwoorden.insert(randbelow(len(antwoorden)+1), goede_antwoord)
+        
+        vragenlijst.append("")
+        goede_antwoord = ""
+        antwoorden = ["", "", ""]
+        antwoorden.insert(randbelow(len(antwoorden)+1), goede_antwoord)
+        
+        vragenlijst.append("")
+        goede_antwoord = ""
+        antwoorden = ["", "", ""]
+        antwoorden.insert(randbelow(len(antwoorden)+1), goede_antwoord)
+
     hide()
     # antwoorden vragen aan de deelnemers
     naam = input("Hoe heet je? ")
