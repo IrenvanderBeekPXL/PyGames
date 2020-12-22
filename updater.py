@@ -20,6 +20,6 @@ os.system("wget -q --tries=inf http://iren.be/soepweb4/computer/downloads/Termin
 os.system("\cp -R TerminalGames-update.zip updates")
 os.system("rm TerminalGames-update.zip")
 os.system("unzip updates/TerminalGames-update")
-os.system("\cp TerminalGames-main ..")
+os.system("\cp -r TerminalGames-main ..")
 os.system("rm updates/TerminalGames-update.zip")
 os.system("python3 main.py")
