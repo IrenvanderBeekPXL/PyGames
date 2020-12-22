@@ -23,8 +23,8 @@ def move(player, pawn, needs_to_start, board):
         for i in range(pawn):
             pawn_index = board.index(player, i)
         last_number = board[pawn_index - moves_to_move]
-        
-
+        board[pawn_index - moves_to_move] = player
+        board[pawn_index] = "."
         return last_number
 
     if moves_to_move == 6 and needs_to_start[player] != 0:
@@ -34,13 +34,19 @@ def move(player, pawn, needs_to_start, board):
     else:
         last_number = moving(moves_to_move, player, pawn, board)    
 
-    if last_number != 0:
+    if last_number != ".":
         needs_to_start[last_number] += 1
 
 def main():
     needs_to_start = [4] * 4
     board = ["."] * 40
-    print_board(board, needs_to_start)
+    while not "." in board or not 0 in needs_to_start:
+        for i in range(4):
+            print_board(board, needs_to_start)
+            pawn = int(input("Welke pion wil je zetten? (jij bent speler " + str(i) + ") "))
+            move(i, pawn, needs_to_start, board)
+
+    print("Spel afgelopen. Alle pionnen zijn verdwenen")
 
 if __name__ == "__main__":
     main()
