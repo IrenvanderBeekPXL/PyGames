@@ -27,13 +27,19 @@ def move(player, pawn, needs_to_start, board):
 
         return last_number
 
+    if moves_to_move == 6 and needs_to_start[player] != 0:
+        needs_to_start[player] -= 1
+        last_number = board[player * 10 - 8]
+        board[player * 10 - 8] == player
+    else:
+        last_number = moving(moves_to_move, player, pawn, board)    
 
     if last_number != 0:
-        needs_to_start[last_number-1] += 1
+        needs_to_start[last_number] += 1
 
 def main():
     needs_to_start = [4] * 4
-    board = [0] * 40
+    board = ["."] * 40
     print_board(board, needs_to_start)
 
 if __name__ == "__main__":
