@@ -47,15 +47,15 @@ def main():
             antwoordenlijst.append(antwoorden)
             vraag = input("Typ een vraag in (xxx om te stoppen) ")
     else:
-        vragenlijst.append("")
-        goede_antwoord = ""
-        antwoorden = ["", "", ""]
+        vragenlijst.append("Wat is de hoofdstad van Nederland?")
+        goede_antwoord = "Amsterdam"
+        antwoorden = ["Brussel", "Utrecht", "Eindhoven"]
         antwoorden.insert(randbelow(len(antwoorden)+1), goede_antwoord)
         antwoordenlijst.append(antwoorden)
 
-        vragenlijst.append("")
-        goede_antwoord = ""
-        antwoorden = ["", "", ""]
+        vragenlijst.append("In welke taal is dit quizprogramma geschreven?")
+        goede_antwoord = "Python"
+        antwoorden = ["Nederlands", "Engels", "Zuid-afrikaans"]
         antwoorden.insert(randbelow(len(antwoorden)+1), goede_antwoord)
         antwoordenlijst.append(antwoorden)
 
