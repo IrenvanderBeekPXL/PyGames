@@ -35,7 +35,7 @@ def move(player, pawn, needs_to_start, board, moves_to_move):
     if moves_to_move == 6 and needs_to_start[player] != 0:
         needs_to_start[player] -= 1
         last_number = board[player * 10 + 2]
-        board[player * 10 + 2] == player
+        board[player * 10 + 2] = player
         print_board(board, needs_to_start)
         print(last_number)
     else:
