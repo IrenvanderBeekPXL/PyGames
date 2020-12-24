@@ -19,11 +19,14 @@ def move(player, pawn, needs_to_start, board, moves_to_move):
     # If moves_to_move is 6, you should get a new pawn on the board
     # the place to let it start is player * 10 - 8
     def moving(moves_to_move, player, pawn, board):
-        for i in range(pawn):
+        for i in range(pawn + 1):
             try:
-                pawn_index = board.index(player, i)
+                pawn_index = board.index(player, pawn_index)
             except:
-                pass
+                if player in board:
+                    pawn_index = 0
+                else:
+                    break
         try:
             last_number = board[pawn_index - moves_to_move]
             board[pawn_index - moves_to_move] = player
@@ -36,8 +39,6 @@ def move(player, pawn, needs_to_start, board, moves_to_move):
         needs_to_start[player] -= 1
         last_number = board[player * 10 + 2]
         board[player * 10 + 2] = player
-        print_board(board, needs_to_start)
-        print(last_number)
     else:
         last_number = moving(moves_to_move, player, pawn, board)    
 
