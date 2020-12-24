@@ -21,7 +21,7 @@ def move(player, pawn, needs_to_start, board, moves_to_move):
     def moving(moves_to_move, player, pawn, board):
         for i in range(pawn + 1):
             try:
-                pawn_index = board.index(player, pawn_index)
+                pawn_index = board.index(player, pawn_index + 1)
             except:
                 if player in board:
                     pawn_index = 0
