@@ -41,15 +41,21 @@ def move(player, pawn, needs_to_start, board, moves_to_move):
         last_number = board[player * 10 + 2]
         board[player * 10 + 2] = player
     else:
-        last_number = moving(moves_to_move, player, pawn, board)    
+        last_number = moving(moves_to_move, player, pawn, board)
 
     if last_number != ".":
         needs_to_start[last_number] += 1
 
+def get_winner(board, needs_to_start):
+    for i in range(4):
+        if needs_to_start[i] == 0 and not i in board:
+            return i
+    return -1
+
 def main():
     needs_to_start = [4] * 4
     board = ["."] * 40
-    while not "." in board or not 0 in needs_to_start:
+    while get_winner(board, needs_to_start) == -1:
         for i in range(4):
             moves_to_move = dice()
             print_board(board, needs_to_start)
@@ -57,7 +63,7 @@ def main():
             pawn = int(input("Welke pion wil je zetten? (jij bent speler " + str(i) + ") "))
             move(i, pawn, needs_to_start, board, moves_to_move)
 
-    print("Spel afgelopen. Alle pionnen zijn verdwenen")
+    print("Spel afgelopen. Speler", get_winner(board, needs_to_start), "heeft gewonnen")
 
 if __name__ == "__main__":
     main()
