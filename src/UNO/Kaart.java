@@ -6,7 +6,10 @@ public class Kaart {
     private String color;
     private String icoon;
 
-
+    public Kaart(String color, String icoon){
+        setColor(color);
+        setIcoon(icoon);
+    }
 
     public String getColor() {
         return color;
