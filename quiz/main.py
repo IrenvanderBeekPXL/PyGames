@@ -55,13 +55,13 @@ def main():
 
         vragenlijst.append("In welke taal is dit quizprogramma geschreven?")
         goede_antwoord = "Python"
-        antwoorden = ["Nederlands", "Engels", "Zuid-afrikaans"]
+        antwoorden = ["Nederlands", "Engels", "Zuid-afrikaans", "Java"]
         antwoorden.insert(randbelow(len(antwoorden)+1), goede_antwoord)
         antwoordenlijst.append(antwoorden)
 
-        vragenlijst.append("")
-        goede_antwoord = ""
-        antwoorden = ["", "", ""]
+        vragenlijst.append("Welke taal spreken ze in Nederland het meest?")
+        goede_antwoord = "Nederlands"
+        antwoorden = ["Fries", "Engels", "Nederlands en Fries"]
         antwoorden.insert(randbelow(len(antwoorden)+1), goede_antwoord)
         antwoordenlijst.append(antwoorden)
 
