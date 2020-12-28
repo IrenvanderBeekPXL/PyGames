@@ -26,4 +26,9 @@ public class Kaart {
     public void setIcoon(String icoon) {
         this.icoon = icoon;
     }
+
+    @Override
+    public String toString() {
+        return getColor() + " " + getIcoon();
+    }
 }
