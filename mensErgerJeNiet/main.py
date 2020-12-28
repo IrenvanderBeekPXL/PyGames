@@ -32,6 +32,8 @@ def move(player, pawn, needs_to_start, board, moves_to_move):
             if not ((pawn_index - moves_to_move <= player * 10 + 2) and (pawn_index > player * 10 + 2)):
                 board[pawn_index - moves_to_move] = player
             board[pawn_index] = "."
+            if (pawn_index - moves_to_move <= player * 10 + 2):
+                last_number = "."
         except:
             last_number = "."
         return last_number
