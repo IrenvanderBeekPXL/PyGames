@@ -6,6 +6,11 @@ public class Speler {
     private ArrayList<Kaart> kaarten;
     private int spelerNummer;
 
+    public Speler(int spelerNummer, ArrayList<Kaart> kaarten){
+        this.spelerNummer = spelerNummer;
+        setKaarten(kaarten);
+    }
+
     public ArrayList<Kaart> getKaarten() {
         return kaarten;
     }
