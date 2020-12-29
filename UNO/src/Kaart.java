@@ -1,5 +1,5 @@
 public class Kaart {
-    private static final String[] TOEGELATEN_KLEUREN = new String[]{"red", "green", "blue", "yellow", "black"};
+    private static final String[] TOEGELATEN_KLEUREN = new String[]{"Red", "Green", "Blue", "Yellow", "Black"};
     private static final String[] TOEGELATEN_ICONEN = new String[]{"0", "1","2", "3", "4", "5", "6",
             "7", "8", "9", "+2", "+4", "WILD", "REVERSE", "SKIP"};
     private String color;
