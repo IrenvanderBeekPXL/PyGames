@@ -13,4 +13,4 @@ All games are tested on a 2.5Ghz CPU and are single core. Just make sure your CP
 # How to open (for Windows 10)
 Use the search bar and search "cmd". Open the windows terminal, and use the cd command to go to the place where you unzipped all the files. Then, just run "python3 main.py", and enjoy your games!
 # How to help making it better
-Thank you if you want to help. You can fork this repository and start a pull request if you want to help. This is the easiest way to help most. If you are not fammiliar with Python, you can also test the beta versions of TerminalGames (Linux users, I don't have support for this in the auto-updater jet, but I will add it in a few releases) and report bugs you find.
+Thank you if you want to help. You can fork this repository and start a pull request if you want to help. This is the easiest way to help most. If you are not fammiliar with Python, you can also test the beta versions of TerminalGames and report bugs you find.
