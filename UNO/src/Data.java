@@ -1,5 +1,3 @@
-package util;
-
 public abstract class Data {
     public static int minMax(int min, int max, int value){
         if (value < min){

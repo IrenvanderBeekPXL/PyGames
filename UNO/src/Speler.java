@@ -1,5 +1,3 @@
-package UNO;
-
 import java.util.ArrayList;
 
 public class Speler {
