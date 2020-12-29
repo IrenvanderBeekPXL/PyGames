@@ -5,7 +5,7 @@ public abstract class Util {
     */
 
     public static int getWinner(Speler[] spelers){
-         for (Speler speler : spelers) {
+        for (Speler speler : spelers) {
             if (speler.getKaarten().toArray().length == 0) {
                 return speler.getSpelerNummer();
             }
