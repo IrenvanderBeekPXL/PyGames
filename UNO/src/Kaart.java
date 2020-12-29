@@ -14,7 +14,11 @@ public class Kaart {
     }
 
     public void setColor(String color) {
-        this.color = color;
+        if (Data.arrayIn(TOEGELATEN_KLEUREN, color)) {
+            this.color = color;
+        } else {
+            System.out.println("Kleur bestaat niet");
+        }
     }
 
     public String getIcoon() {
@@ -22,7 +26,11 @@ public class Kaart {
     }
 
     public void setIcoon(String icoon) {
-        this.icoon = icoon;
+        if (Data.arrayIn(TOEGELATEN_ICONEN, icoon)) {
+            this.icoon = icoon;
+        } else {
+            System.out.println("Icoon bestaat niet");
+        }
     }
 
     @Override
