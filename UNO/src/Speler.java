@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Speler {
     private ArrayList<Kaart> kaarten;
@@ -23,5 +24,18 @@ public class Speler {
 
     public int getSpelerNummer() {
         return spelerNummer;
+    }
+
+    public Kaart popKaart(int kaartIndex){
+        Kaart kaart = kaarten.get(kaartIndex);
+        kaarten.remove(kaartIndex);
+        return kaart;
+    }
+
+    public void drawKaart(Kaart[] kaartenStapel){
+        Random random = new Random();
+        int index = random.nextInt(kaartenStapel.length);
+        kaarten.add(kaartenStapel[index]);
+
     }
 }
