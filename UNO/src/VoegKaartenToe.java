@@ -1,8 +1,8 @@
 public abstract class VoegKaartenToe {
-    public static void addKaarten(Kaart[] legeKaartlijst){
-        int aantalNormaal = 2;
-        int aantalBasicPlaag = 2;
-        int aantalKleurChange = 4;
+    public static Kaart[] addKaarten(int aantalNormaal,
+                                  int aantalBasicPlaag,
+                                  int aantalKleurChange){
+        Kaart[] legeKaartlijst = new Kaart[aantalNormaal * 40 + aantalBasicPlaag * 12 + aantalKleurChange * 2];
         int i = 0;
         for (int j = 0; j < aantalNormaal; j++) {
             legeKaartlijst[i] = new Kaart("Yellow", "0");
@@ -220,5 +220,6 @@ public abstract class VoegKaartenToe {
             legeKaartlijst[i] = new Kaart("Black", "+4");
             i++;
         }
+        return legeKaartlijst;
     }
 }
