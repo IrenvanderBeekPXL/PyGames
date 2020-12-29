@@ -15,7 +15,7 @@ while game != "stop":
     if game in pythongames:
         os.system("python3 " + game + "/main.py")
     elif game in javagames:
-        os.system("python3 " + game + "/start.jar")
+        os.system("java -jar " + game + "/start.jar")
     print("Copy one of the following games")
     for i in games:
         print(i)
