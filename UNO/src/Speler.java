@@ -5,9 +5,15 @@ public class Speler {
     private ArrayList<Kaart> kaarten;
     private int spelerNummer;
 
-    public Speler(int spelerNummer, ArrayList<Kaart> kaarten){
+    public Speler(int spelerNummer, Kaart[] kaartenStapel){
         this.spelerNummer = spelerNummer;
-        setKaarten(kaarten);
+        deelKaart(kaartenStapel);
+    }
+
+    public void deelKaart(Kaart[] kaartenStapel){
+        for (int i = 0; i < 7; i++) {
+            drawKaart(kaartenStapel);
+        }
     }
 
     public ArrayList<Kaart> getKaarten() {
