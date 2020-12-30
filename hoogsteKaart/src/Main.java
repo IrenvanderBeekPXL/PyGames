@@ -54,6 +54,8 @@ public class Main {
             } else{
                 System.out.println("We hebben gelijkgespeeld");
             }
+            System.out.println("kaart van mij: " + kaartPC);
+            System.out.println("kaart van jou: " + kaartSpeler);
             System.out.println();
         }
         System.out.println("Bedankt voor het spelen");
