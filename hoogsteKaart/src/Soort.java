@@ -7,4 +7,8 @@ public enum Soort {
     Soort(String naam){
         this.naam = naam;
     }
+
+    public String getNaam() {
+        return naam;
+    }
 }
