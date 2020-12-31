@@ -10,6 +10,8 @@ Download the git repository as a zip file. Unzip everything (best in a folder ca
 Make sure the installation folder is called TerminalGames-main. Else, the update will not install in the correct folder and the program will run the old version of TerminalGames. After you are in the correct folder (cd to get there), run "python3 updater.py". This program needs to run as ROOT if you are updating the first time. The program will automatically search for updates on my web server, and then install them. If your updater askes to overwrite a file, type "A" from "All" to overwrite the old TerminalGames files.
 # System requierments
 All games are tested on a 2.5Ghz CPU and are single core. Just make sure your CPU can go higher than 2.5Ghz and it should work. For Hard disk or SSD room, I recommend having 1GB of free room. For screen resolution, please do nothing higher than 1920x1080. I will try to test them later on higher resolutions, but 4K and bigger is probably too big for some games. Lower resolution is better, but please don't run this on 800x600. The only reason you need a powerful GPU is if you are playing on an 8K TV, and that could be too big for those games...
+
+The chess program does need a modern cpu to run this. I tested it on a 4th generation Intel cpu, and that worked. If you got a Ryzen or Zen-based Athlon, it will also work just fine. But I think second-gen Intel CPU or AMD Phenom II, it will crash before it gave you the chance to move e4.
 # How to open (for Windows 10)
 Use the search bar and search "cmd". Open the windows terminal, and use the cd command to go to the place where you unzipped all the files. Then, just run "python3 main.py", and enjoy your games!
 # How to help making it better
