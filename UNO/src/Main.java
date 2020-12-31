@@ -13,7 +13,7 @@ public class Main {
         for (int i = 0; i < spelers.length; i++) {
             spelers[i] = new Speler(i, kaarten);
         }
-        while (Util.getWinner(spelers) != -1){
+        while (Util.getWinner(spelers) == -1){
             // getting the correct player
             spelerNummerAanDeBeurt %= spelers.length;
             for (Speler speler : spelers) {
@@ -51,6 +51,11 @@ public class Main {
                 }
             }
             if (bovensteKaart.getIcoon().equals("+2")){
+                spelerNext.drawKaart(kaarten);
+                spelerNext.drawKaart(kaarten);
+                spelerNummerAanDeBeurt += 1;
+            }
+            if (bovensteKaart.getIcoon().equals("SKIP")){
 
             }
         }

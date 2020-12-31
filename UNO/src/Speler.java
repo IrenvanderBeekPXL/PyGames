@@ -7,6 +7,7 @@ public class Speler {
 
     public Speler(int spelerNummer, Kaart[] kaartenStapel){
         this.spelerNummer = spelerNummer;
+        kaarten = new ArrayList<>();
         deelKaart(kaartenStapel);
     }
 
