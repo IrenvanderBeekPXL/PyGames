@@ -4,7 +4,10 @@ from stockfish import Stockfish
 import platform
 #os.system("python3 schaken/sunfish-master/sunfish.py")
 user = "12000780"
-engine = Stockfish("schaken/stockfish-win/stockfish.exe")
+if platform.system == "Linux":
+    engine = Stockfish("schaken/stockfish-linux/stockfish")
+else:
+    engine = Stockfish("schaken/stockfish-win/stockfish.exe")
 engine.set_depth(20)
 engine.set_skill_level(20)
 wit = True
