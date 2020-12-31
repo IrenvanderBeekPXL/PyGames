@@ -2,7 +2,7 @@ import os
 os.system("pip install stockfish")
 from stockfish import Stockfish
 import platform
-#os.system("python3 schaken/sunfish-master/sunfish.py")
+input("WARNING. This chess program is about as strong as it gets. Press enter to continue...")
 user = "12000780"
 if platform.system == "Linux":
     engine = Stockfish("schaken/stockfish-linux/stockfish")
