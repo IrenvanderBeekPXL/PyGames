@@ -2,7 +2,7 @@
 
 import os
 pythongames = ["hartenjagen", "memory", "OXO", "quiz", "schaken", "zeeslag", "hangman", "MensErgerJeNiet", "MensErgerJeNietAI"]
-javagames = []
+javagames = ["UNO"]
 games = pythongames + javagames
 print("Welcome to TerminalGames")
 print("Some games only work on 1920 * 1080 resolution")
@@ -14,6 +14,8 @@ while game != "stop":
     print("Opening game...")
     if game in pythongames:
         os.system("python3 " + game + "/main.py")
+    elif game in javagames:
+        os.system("java -jar " + game + "/main.jar")
     print("Copy one of the following games")
     for i in games:
         print(i)
