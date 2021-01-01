@@ -41,7 +41,7 @@ public class Main {
             System.out.println("Welke index kaaart wil je? (bovenste is index 1, 0 is draw) ");
             try {
                 bovensteKaart = spelerAanDeBeurt.popKaart(
-                        Data.minMax(0, spelerAanDeBeurt.getKaarten().toArray().length - 1,
+                        Data.minMax(-1, spelerAanDeBeurt.getKaarten().toArray().length - 1,
                                 input.nextInt() - 1));
                 // doing special stuff if needed
                 // get next player
@@ -67,6 +67,7 @@ public class Main {
                         normale_volgorde = !normale_volgorde;
                     }
                 } else {
+                    input.nextLine();
                     System.out.println("Welke kleur? (Blue, Yellow, Green, Red)");
                     newColor = input.nextLine();
                     if (bovensteKaart.getIcoon().equals("+4")){
@@ -77,7 +78,7 @@ public class Main {
                         spelerNummerAanDeBeurt += 1;
                     }
                 }
-            } catch (ArrayIndexOutOfBoundsException exception){
+            } catch (IndexOutOfBoundsException exception){
                 spelerAanDeBeurt.drawKaart(kaarten);
             } catch (NullPointerException | ArithmeticException exception){
                 System.out.println("Er is een fout in de code. Gelieve een bug te reporten " +
