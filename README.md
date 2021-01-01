@@ -2,10 +2,12 @@
 TerminalGames is a gaming center made in python
 # How to install (for Windows 10)
 Go to the Microsoft Store and search for "Python 3.8". Go to the Python 3.8 program, and press "Install". You can log in with your Microsoft account, but you don't have to. Next, download the git repository as a zip file and unzip. Then, scroll down here to find out how to open...
-# How to install (for Apple Mac(not tested, please test it for me))
-Download the git repository as a zip file. Unzip everything, go to the installers folder, and run the installer. After installation, open main.py in the main folder, and enjoy your games!
+
+For some games, you need Java JDK SE 15. These include hoogsteKaart and UNO. If you play Minecraft and use a mod called Optifine, you already have this installed. Else, you should check if you have it installed with the command "java --version" in the cmd program. If you get an error message like "java is not recocnized", you should download Java JDK at [Orcale's website](https://www.oracle.com/be/java/technologies/javase-jdk15-downloads.html) (use the Windows x64 installer)
 # How to install (for Ubuntu and variants)
 Download the git repository as a zip file. Unzip everything (best in a folder called TerminalGames-main, for the updater) and delete the installers folder, it's just for MacOS. Open the terminal, ant run "sudo apt update" and "sudo apt upgrade". This will update your whole OS, just like the update manager will do. Then use the cd command to go to the place you unzipped the files, run "python3 main.py" and enjoy your games!
+
+For some games, you need Java JDK SE 15. These include hoogsteKaart and UNO. If you play Minecraft and use a mod called Optifine, you already have this installed. Else, you should check if you have it installed with the command "java --version" in the cmd program. If you get an error message like "java is not recocnized", you should download Java JDK at [Orcale's website](https://www.oracle.com/be/java/technologies/javase-jdk15-downloads.html) (use the Linux x64 Debian Package)
 # How to update (for Ubuntu and variants)
 Make sure the installation folder is called TerminalGames-main. Else, the update will not install in the correct folder and the program will run the old version of TerminalGames. After you are in the correct folder (cd to get there), run "python3 updater.py". This program needs to run as ROOT if you are updating the first time. The program will automatically search for updates on my web server, and then install them. If your updater askes to overwrite a file, type "A" from "All" to overwrite the old TerminalGames files.
 # System requierments
