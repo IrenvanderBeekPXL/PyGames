@@ -23,6 +23,9 @@ public class Main {
                     break; // less cpu time
                 }
             }
+            System.out.println("Speler " + spelerNummerAanDeBeurt + " is aan de beurt");
+            System.out.println("Druk op enter...");
+            input.nextLine();
 
             // show the top card
             System.out.println("top card: " + bovensteKaart);
@@ -40,9 +43,10 @@ public class Main {
             // ask the correct card for input
             System.out.println("Welke index kaaart wil je? (bovenste is index 1, 0 is draw) ");
             try {
-                bovensteKaart = spelerAanDeBeurt.popKaart(
-                        Data.minMax(-1, spelerAanDeBeurt.getKaarten().toArray().length - 1,
-                                input.nextInt() - 1));
+                int legKaart = Data.minMax(-1, spelerAanDeBeurt.getKaarten().toArray().length - 1,
+                        input.nextInt() - 1);
+
+                bovensteKaart = spelerAanDeBeurt.popKaart(legKaart);
                 // doing special stuff if needed
                 // get next player
                 int spelerNummerNext = spelerNummerAanDeBeurt + 1;

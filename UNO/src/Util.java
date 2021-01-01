@@ -1,7 +1,7 @@
 public abstract class Util {
     /*
-    calculate winner (public static int get_winner, return -1 if there is no winner)
-    add a method to hide the cards (public static void hide())
+    Add a method to check if a card is ok to play
+    (public static boolean isLegal(Kaart toPut, Kaart bovensteKaart))
     */
 
     public static int getWinner(Speler[] spelers) {
