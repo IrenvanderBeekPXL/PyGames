@@ -3,11 +3,10 @@ os.system("pip install stockfish")
 from stockfish import Stockfish
 import platform
 input("WARNING. This chess program is about as strong as it gets. Press enter to continue...")
-user = "12000780"
 if platform.system == "Linux":
-    engine = Stockfish("schaken/stockfish-linux/stockfish")
+    engine = Stockfish("schaken/stockfish-linux/stockfish", parameters={"Slow Mover": 120, "Threads": 2})
 else:
-    engine = Stockfish("schaken/stockfish-win/stockfish.exe")
+    engine = Stockfish("schaken/stockfish-win/stockfish.exe", parameters={"Slow Mover": 120, "Threads": 2})
 engine.set_depth(20)
 engine.set_skill_level(20)
 wit = True
