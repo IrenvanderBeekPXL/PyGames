@@ -45,7 +45,13 @@ public class Main {
             try {
                 int legKaart = Data.minMax(-1, spelerAanDeBeurt.getKaarten().toArray().length - 1,
                         input.nextInt() - 1);
-
+                // control if it is correct
+                while (!Util.isLegal(spelerAanDeBeurt.getKaarten().get(legKaart), bovensteKaart)){
+                    System.out.println("Error, deze kaart is ongeldig.");
+                    System.out.println("Welke index kaaart wil je? (bovenste is index 1, 0 is draw) ");
+                    legKaart = Data.minMax(-1, spelerAanDeBeurt.getKaarten().toArray().length - 1,
+                            input.nextInt() - 1);
+                }
                 bovensteKaart = spelerAanDeBeurt.popKaart(legKaart);
                 // doing special stuff if needed
                 // get next player
