@@ -65,9 +65,9 @@ def main():
         antwoorden.insert(randbelow(len(antwoorden)+1), goede_antwoord)
         antwoordenlijst.append(antwoorden)
 
-        vragenlijst.append("")
-        goede_antwoord = ""
-        antwoorden = ["", "", ""]
+        vragenlijst.append("Welke programeertaal werd toegevoegd aan TerminalGames voor meerdere games aan het begin van 2021?")
+        goede_antwoord = "Java"
+        antwoorden = ["C++", "Python", "Engels"]
         antwoorden.insert(randbelow(len(antwoorden)+1), goede_antwoord)
         antwoordenlijst.append(antwoorden)
         
