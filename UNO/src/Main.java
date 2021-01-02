@@ -26,6 +26,7 @@ public class Main {
             System.out.println("Speler " + spelerNummerAanDeBeurt + " is aan de beurt");
             System.out.println("Druk op enter...");
             input.nextLine();
+            input.nextLine();
 
             // show the top card
             System.out.println("top card: " + bovensteKaart);
