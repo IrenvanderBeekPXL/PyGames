@@ -18,12 +18,14 @@ public abstract class Util {
             System.out.println();
         }
     }
-    public static boolean isLegal(Kaart omTeLeggen, Kaart bovensteStapel){
+    public static boolean isLegal(Kaart omTeLeggen, Kaart bovensteStapel, String kleurNaBlack){
         if (omTeLeggen.getColor().equals(bovensteStapel.getColor())){
             return true;
         } else if (omTeLeggen.getIcoon().equals(bovensteStapel.getIcoon())){
             return true;
         } else if (omTeLeggen.getColor().equals("Black")){
+            return true;
+        } else if (omTeLeggen.getColor().equals(kleurNaBlack)){
             return true;
         } else {
             return false;
