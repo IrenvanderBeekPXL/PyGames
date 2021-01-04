@@ -40,6 +40,8 @@ public class Main {
                 kaartIndexSpeler = Data.minMax(0, 51, kaartIndexSpeler);
             } else{
                 break; // to prevent craches, sorry
+                // of ik had alles in die if hierboven moeten zetten
+                // dat lijkt mij ook niet mooie code
             }
 
             // kaarten opvragen
