@@ -12,7 +12,7 @@ engine.set_skill_level(2)
 wit = True
 moves = []
 engine.set_position(moves)
-while engine.get_evaluation() != {'type': 'mate', 'value': 0}:
+while engine.get_best_move_time(3000) != None:
     if wit:
         print(engine.get_board_visual(), end="")
         print("  a   b   c   d   e   f   g   h")
