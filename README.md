@@ -19,8 +19,8 @@ Use the search bar and search "cmd". Open the windows terminal, and use the cd c
 # How to help making it better
 Thank you if you want to help. You can fork this repository and start a pull request if you want to help. This is the easiest way to help most. If you are not fammiliar with Python, you can also test the beta versions of TerminalGames and report bugs you find.
 # What is it about? (Description)
-TerminalGames started as PyGames, as a holiday project to practace for my Python exam. After my python exam was moved because of Covid, I needed a way to don't forget my python stuff. When I found out that Java could also be used for games in the terminal, I renamed the project to TerminalGames. Fun fact, the project folder on my PC is still called PyGames! This is actually more for fun, but also for fun for you, because you can get 
+TerminalGames started as PyGames, as a holiday project to practice for my Python exam. After my python exam was moved because of Covid, I needed a way to don't forget my Python stuff. When I found out that Java could also be used for games in the terminal, I renamed the project to TerminalGames. Fun fact, the project folder on my PC is still called PyGames! This project is actually more for fun, but also for fun for you, because you can get:
 * A new way of playing UNO
 * Singleplayer memory
-* A weird way of playing hangman
-* (one of) The strongest chess program availible
+* A weird but fun way of playing hangman
+* (one of) The strongest chess program available
