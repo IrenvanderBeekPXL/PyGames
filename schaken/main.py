@@ -7,8 +7,8 @@ if platform.system == "Linux":
     engine = Stockfish("schaken/stockfish-linux/stockfish", parameters={"Slow Mover": 120, "Threads": 2})
 else:
     engine = Stockfish("schaken/stockfish-win/stockfish.exe", parameters={"Slow Mover": 120, "Threads": 2})
-engine.set_depth(20)
-engine.set_skill_level(20)
+engine.set_depth(2)
+engine.set_skill_level(2)
 wit = True
 moves = []
 engine.set_position(moves)
@@ -24,9 +24,13 @@ while engine.get_evaluation() != {'type': 'mate', 'value': 0}:
         engine.set_position(moves)
         wit = False
     else:
+        engine.set_depth(20)
+        engine.set_skill_level(20)
         best_move = engine.get_best_move()
         moves.append(best_move)
         print("Mijn zet is", best_move)
         engine.set_position(moves)
+        engine.set_depth(2)
+        engine.set_skill_level(2)
         wit = True
     
