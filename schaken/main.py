@@ -1,11 +1,13 @@
 import os
+import multiprocessing
 os.system("pip install stockfish")
 from stockfish import Stockfish
 import platform
+treads = multiprocessing.cpu_count()
 if platform.system == "Linux":
-    engine = Stockfish("schaken/stockfish-linux/stockfish", parameters={"Slow Mover": 120, "Threads": 2})
+    engine = Stockfish("schaken/stockfish-linux/stockfish", parameters={"Slow Mover": 120, "Threads": treads})
 else:
-    engine = Stockfish("schaken/stockfish-win/stockfish.exe", parameters={"Slow Mover": 120, "Threads": 2})
+    engine = Stockfish("schaken/stockfish-win/stockfish.exe", parameters={"Slow Mover": 120, "Threads": treads})
 engine.set_depth(2)
 engine.set_skill_level(2)
 wit = True
@@ -14,7 +16,7 @@ engine.set_position(moves)
 play = input("Do you want to play or load in a game? (play/load) ") == "play"
 if play:
     input("WARNING. This chess program is about as strong as it gets. Press enter to continue...")
-    while engine.get_best_move_time(3000) != None:
+    while engine.get_best_move_time(3000) is not None:
         if wit:
             print(engine.get_board_visual(), end="")
             print("  a   b   c   d   e   f   g   h")
@@ -46,4 +48,30 @@ else:
 
 if input("Do you want to analyze the last game? (Y/n)") == "Y":
     input("WARNING! Analyzing could take a whole day for a long game. Press enter to continue...")
+    print("Analyzing...")
+    position = []
+    best_moves = []
+    types = []
+    engine.set_depth(30)
+    engine.set_skill_level(20)
+    white = True
+    for i in moves:
+        engine.set_position(position)
+        best_move = engine.get_best_move()
+        best_moves.append(best_move)
+        if i == best_move:
+            print(i, "was the best move")
+            types.append("Best move")
+            moves.append(i)
+        else:
+            evaluation_before = engine.get_evaluation()
+            moves.append(i)
+            engine.set_position(moves)
+            evaluation_after = engine.get_evaluation()
+            if evaluation_after.get("type") == "cp":
+                pass
+            elif evaluation_before.get("type") == "mate":
+                pass
+            elif evaluation_after.get("type") == "mate":
+                pass
 
