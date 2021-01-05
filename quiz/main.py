@@ -77,9 +77,9 @@ def main():
         antwoorden.insert(randbelow(len(antwoorden)+1), goede_antwoord)
         antwoordenlijst.append(antwoorden)
         
-        vragenlijst.append("")
-        goede_antwoord = ""
-        antwoorden = ["", "", ""]
+        vragenlijst.append("Hoe heet de TerminalGames project map op de PC van de eigenaar?")
+        goede_antwoord = "PyGames"
+        antwoorden = ["TerminalGames", "iets anders", "Hij werkt alleen in de cloud"]
         antwoorden.insert(randbelow(len(antwoorden)+1), goede_antwoord)
         antwoordenlijst.append(antwoorden)
         
