@@ -14,12 +14,20 @@ if info[0] == "not_installed" and platform.system() == "Linux":
     info[0] = "installed"
     print("Installed updater")
 infof.close()
-
-print("Updating... Please do not turn off your computer")
-os.system("wget -q --tries=inf http://iren.be/soepweb4/computer/downloads/TerminalGames-update.zip")
-os.system("\cp -R TerminalGames-update.zip updates")
-os.system("rm TerminalGames-update.zip")
-os.system("unzip updates/TerminalGames-update")
-os.system("\cp -r TerminalGames-main ..")
-os.system("rm updates/TerminalGames-update.zip")
+if input("Do you want to update to a beta version? (Y/n)") == "n":
+    print("Updating... Please do not turn off your computer")
+    os.system("wget -q --tries=inf http://iren.be/soepweb4/computer/downloads/TerminalGames-update.zip")
+    os.system("\cp -R TerminalGames-update.zip updates")
+    os.system("rm TerminalGames-update.zip")
+    os.system("unzip updates/TerminalGames-update")
+    os.system("\cp -r TerminalGames-main ..")
+    os.system("rm updates/TerminalGames-update.zip")
+else:
+    print("Updating... Please do not turn off your computer")
+    os.system("wget -q --tries=inf http://iren.be/soepweb4/computer/downloads/TerminalGames-update-b.zip")
+    os.system("\cp -R TerminalGames-update-b.zip updates")
+    os.system("rm TerminalGames-update-b.zip")
+    os.system("unzip updates/TerminalGames-update-b")
+    os.system("\cp -r TerminalGames-main ..")
+    os.system("rm updates/TerminalGames-update-b.zip")
 os.system("python3 main.py")
