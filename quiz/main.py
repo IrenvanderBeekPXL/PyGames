@@ -71,9 +71,9 @@ def main():
         antwoorden.insert(randbelow(len(antwoorden)+1), goede_antwoord)
         antwoordenlijst.append(antwoorden)
         
-        vragenlijst.append("")
-        goede_antwoord = ""
-        antwoorden = ["", "", ""]
+        vragenlijst.append("Welke terminalgames zijn geschreven in Java?")
+        goede_antwoord = "UNO en hoogsteKaart"
+        antwoorden = ["UNO en schaken", "schaken en hoogsteKaart", "MensErgerJeNiet(AI) en UNO"]
         antwoorden.insert(randbelow(len(antwoorden)+1), goede_antwoord)
         antwoordenlijst.append(antwoorden)
         
