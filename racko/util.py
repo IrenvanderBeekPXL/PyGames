@@ -2,6 +2,7 @@
 # voeg een functie toe om een kaart van het bordje te vervangen door een kaart die meegegeven wordt als parameter
 # De index wordt ook meegegeven als parameter en de vorige kaart moet gereturnt worden
 
+from secrets import randbelow
 
 def hide():
     input("Press enter to hide")
@@ -12,3 +13,8 @@ def hide():
 kaarten_stapel = []
 for i in range(60):
     kaarten_stapel.append(i + 1)
+
+def shuffle(bordjes):
+    for i in bordjes:
+        for j in range(10):
+            i.append(kaarten_stapel[randbelow(len(kaarten_stapel))])

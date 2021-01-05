@@ -10,3 +10,8 @@ def main():
     if not input("Lossen jullie het op? (Y/n) ") == "Y":
         msg = "Error, players do not want to solve the issue"
         raise ConnectionRefusedError(msg)
+    aantal_spelers = int(input("Hoeveel spelers doen er mee? "))
+    bordjes = []
+    for i in range(aantal_spelers):
+        bordjes.append([])
+    util.shuffle(bordjes)
