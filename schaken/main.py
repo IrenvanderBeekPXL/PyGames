@@ -69,9 +69,20 @@ if input("Do you want to analyze the last game? (Y/n)") == "Y":
             engine.set_position(moves)
             evaluation_after = engine.get_evaluation()
             if evaluation_after.get("type") == "cp":
-                pass
+                if white:
+                    if evaluation_after.get("value") >= evaluation_before.get("value"):
+                        print(i, "was a good move")
+                        types.append("Good move")
+                    else:
+                        pass
+                else:
+                    if evaluation_after.get("value") <= evaluation_before.get("value"):
+                        print(i, "was a good move")
+                        types.append("Good move")
+                    else:
+                        pass
             elif evaluation_before.get("type") == "mate":
                 pass
             elif evaluation_after.get("type") == "mate":
                 pass
-
+            print(best_move, "was the best move")
