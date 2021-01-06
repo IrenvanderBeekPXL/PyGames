@@ -48,6 +48,7 @@ else:
 
 if input("Do you want to analyze the last game? (Y/n)") == "Y":
     input("WARNING! Analyzing could take a whole day for a long game. Press enter to continue...")
+    print("If you run this on a laptop, please plug it in an electricity outlet.")
     print("Analyzing...")
     position = []
     best_moves = []
@@ -73,20 +74,20 @@ if input("Do you want to analyze the last game? (Y/n)") == "Y":
                     if evaluation_after.get("value") >= evaluation_before.get("value"):
                         print(i, "was a good move")
                         types.append("Good move")
-                    elif evaluation_after.get("value") + 0.5 >= evaluation_before.get("value"):
+                    elif evaluation_after.get("value") - 1 >= evaluation_before.get("value"):
                         types.append("Not that bad")
                         print(i, "was not so good, but also not bad")
                 else:
                     if evaluation_after.get("value") <= evaluation_before.get("value"):
                         print(i, "was a good move")
                         types.append("Good move")
-                    elif evaluation_after.get("value") + 0.5 <= evaluation_before.get("value"):
+                    elif evaluation_after.get("value") + 1 <= evaluation_before.get("value"):
                         types.append("Not that bad")
                         print(i, "was not so good, but also not bad")
             elif evaluation_before.get("type") == "mate":
                 pass
             elif evaluation_after.get("type") == "mate":
-                if white:
+                if not white:
                     if evaluation_before.get("value") > 60:
                         types.append("Not that bad")
                         print(i, "was not so good, but also not bad")
