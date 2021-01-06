@@ -84,5 +84,25 @@ if input("Do you want to analyze the last game? (Y/n)") == "Y":
             elif evaluation_before.get("type") == "mate":
                 pass
             elif evaluation_after.get("type") == "mate":
-                pass
+                if white:
+                    if evaluation_before.get("value") > 60:
+                        types.append("Not that bad")
+                        print(i, "was not so good")
+                    elif evaluation_before.get("value") > 25:
+                        types.append("Bad move")
+                        print(i, "was a bad move")
+                    else:
+                        types.append("Blunder")
+                        print(i, "was a blundery blunder")
+                else:
+                    if evaluation_before.get("value") < -60:
+                        types.append("Not that bad")
+                        print(i, "was not so good")
+                    elif evaluation_before.get("value") < -25:
+                        types.append("Bad move")
+                        print(i, "was a bad move")
+                    else:
+                        types.append("Blunder")
+                        print(i, "was a blundery blunder")
+
             print(best_move, "was the best move")
