@@ -69,7 +69,7 @@ if input("Do you want to analyze the last game? (Y/n)") == "Y":
             position.append(i)
             engine.set_position(position)
             evaluation_after = engine.get_evaluation()
-            if evaluation_after.get("type") == "cp":
+            if evaluation_after.get("type") == "cp" and evaluation_before.get("type") == "cp":
                 if white:
                     if evaluation_after.get("value") >= evaluation_before.get("value"):
                         print(i, "was a good move")
@@ -77,6 +77,12 @@ if input("Do you want to analyze the last game? (Y/n)") == "Y":
                     elif evaluation_after.get("value") - 1 >= evaluation_before.get("value"):
                         types.append("Not that bad")
                         print(i, "was not so good, but also not bad")
+                    elif evaluation_after.get("value") - 7 >= evaluation_before.get("value"):
+                        types.append("Bad move")
+                        print(i, "was a bad move")
+                    else:
+                        types.append("Blunder")
+                        print(i, "was a blundery blunder")
                 else:
                     if evaluation_after.get("value") <= evaluation_before.get("value"):
                         print(i, "was a good move")
@@ -84,8 +90,15 @@ if input("Do you want to analyze the last game? (Y/n)") == "Y":
                     elif evaluation_after.get("value") + 1 <= evaluation_before.get("value"):
                         types.append("Not that bad")
                         print(i, "was not so good, but also not bad")
+                    elif evaluation_after.get("value") + 7 <= evaluation_before.get("value"):
+                        types.append("Bad move")
+                        print(i, "was a bad move")
+                    else:
+                        types.append("Blunder")
+                        print(i, "was a blundery blunder")
             elif evaluation_before.get("type") == "mate":
-                pass
+                print("Forced mate before and after")
+                types.append("Nothing")
             elif evaluation_after.get("type") == "mate":
                 if not white:
                     if evaluation_before.get("value") > 60:
@@ -107,5 +120,8 @@ if input("Do you want to analyze the last game? (Y/n)") == "Y":
                     else:
                         types.append("Blunder")
                         print(i, "was a blundery blunder")
+            else:
+                print("I don't know what is happening with", i)
+                types.append(None)
 
             print(best_move, "was the best move")
