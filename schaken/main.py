@@ -62,32 +62,34 @@ if input("Do you want to analyze the last game? (Y/n)") == "Y":
         if i == best_move:
             print(i, "was the best move")
             types.append("Best move")
-            moves.append(i)
+            position.append(i)
         else:
             evaluation_before = engine.get_evaluation()
-            moves.append(i)
-            engine.set_position(moves)
+            position.append(i)
+            engine.set_position(position)
             evaluation_after = engine.get_evaluation()
             if evaluation_after.get("type") == "cp":
                 if white:
                     if evaluation_after.get("value") >= evaluation_before.get("value"):
                         print(i, "was a good move")
                         types.append("Good move")
-                    else:
-                        pass
+                    elif evaluation_after.get("value") + 0.5 >= evaluation_before.get("value"):
+                        types.append("Not that bad")
+                        print(i, "was not so good, but also not bad")
                 else:
                     if evaluation_after.get("value") <= evaluation_before.get("value"):
                         print(i, "was a good move")
                         types.append("Good move")
-                    else:
-                        pass
+                    elif evaluation_after.get("value") + 0.5 <= evaluation_before.get("value"):
+                        types.append("Not that bad")
+                        print(i, "was not so good, but also not bad")
             elif evaluation_before.get("type") == "mate":
                 pass
             elif evaluation_after.get("type") == "mate":
                 if white:
                     if evaluation_before.get("value") > 60:
                         types.append("Not that bad")
-                        print(i, "was not so good")
+                        print(i, "was not so good, but also not bad")
                     elif evaluation_before.get("value") > 25:
                         types.append("Bad move")
                         print(i, "was a bad move")
@@ -97,7 +99,7 @@ if input("Do you want to analyze the last game? (Y/n)") == "Y":
                 else:
                     if evaluation_before.get("value") < -60:
                         types.append("Not that bad")
-                        print(i, "was not so good")
+                        print(i, "was not so good, but also not bad")
                     elif evaluation_before.get("value") < -25:
                         types.append("Bad move")
                         print(i, "was a bad move")
