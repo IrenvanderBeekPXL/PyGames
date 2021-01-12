@@ -1,4 +1,4 @@
-# line 71 to change the ai priorities
+# line 81 to change the ai priorities
 from secrets import randbelow
 def dice():
     return randbelow(6) + 1

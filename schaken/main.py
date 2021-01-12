@@ -53,7 +53,7 @@ if input("Do you want to analyze the last game? (Y/n)") == "Y":
     position = []
     best_moves = []
     types = []
-    engine.set_depth(30)
+    engine.set_depth(25)
     engine.set_skill_level(20)
     white = True
     for i in moves:
