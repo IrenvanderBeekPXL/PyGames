@@ -1,6 +1,4 @@
 # TODO
-# voeg een functie toe om een kaart van het bordje te vervangen door een kaart die meegegeven wordt als parameter
-# De index wordt ook meegegeven als parameter en de vorige kaart moet gereturnt worden
 
 from secrets import randbelow
 
@@ -25,3 +23,7 @@ def is_gewonnen(bordje):
         if i <= vorige:
             return False
     return True
+ 
+def verander_kaart(index, volgende_kaart, bordje):
+    yield bordje.pop(index)
+    bordje.insert(index, volgende_kaart)

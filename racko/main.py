@@ -1,3 +1,4 @@
+from typing import get_type_hints
 import util
 import time
 
