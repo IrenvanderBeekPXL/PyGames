@@ -14,6 +14,10 @@ def main():
     for i in range(aantal_spelers):
         bordjes.append([])
     util.shuffle(bordjes)
+    bovenste_kaart = util.randbelow(len(util.kaartenstapel))
+    speler = 0
+    while not util.is_gewonnen(bordjes[speler]):
+        pass
 
 if __name__ == '__main__':
     main()

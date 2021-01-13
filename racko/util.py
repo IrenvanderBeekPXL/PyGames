@@ -18,3 +18,10 @@ def shuffle(bordjes):
     for i in bordjes:
         for j in range(10):
             i.append(kaarten_stapel[randbelow(len(kaarten_stapel))])
+
+def is_gewonnen(bordje):
+    vorige = 0
+    for i in bordje:
+        if i <= vorige:
+            return False
+    return True
