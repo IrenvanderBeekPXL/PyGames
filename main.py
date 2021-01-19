@@ -1,8 +1,8 @@
 # The games programmed in here do not use the GPU and only 1 core
 
 import os
-pythongames = ["hartenjagen", "memory", "OXO", "quiz", "schaken", "zeeslag", "hangman", "MensErgerJeNiet", "MensErgerJeNietAI", "mastermind"]
-javagames = ["hoogsteKaart", "UNO"]
+pythongames = ["hartenjagen", "memory", "OXO", "quiz", "schaken", "zeeslag", "hangman", "MensErgerJeNiet", "MensErgerJeNietAI"]
+javagames = ["hoogsteKaart", "UNO", "mastermind"]
 games = pythongames + javagames
 print("Welcome to TerminalGames")
 print("Some games only work on 1920 * 1080 resolution")
