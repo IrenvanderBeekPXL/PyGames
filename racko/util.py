@@ -18,12 +18,19 @@ def shuffle(bordjes):
             i.append(kaarten_stapel[randbelow(len(kaarten_stapel))])
 
 def is_gewonnen(bordje):
-    vorige = 0
-    for i in bordje:
-        if i <= vorige:
-            return False
-    return True
+    try:
+        vorige = 0
+        for i in bordje:
+            if i <= vorige:
+                return False
+        return True
+    except IndexError:
+        return False
  
 def verander_kaart(index, volgende_kaart, bordje):
     yield bordje.pop(index)
     bordje.insert(index, volgende_kaart)
+
+def hide():
+    for i in range(2000):
+        print("\n")
