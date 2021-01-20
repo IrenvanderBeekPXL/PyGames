@@ -19,16 +19,18 @@ def is_gewonnen(bordje):
     try:
         vorige = 0
         for i in bordje:
-            if i <= vorige:
+            if i >= vorige:
                 return False
         return True
     except IndexError:
         return False
  
 def verander_kaart(index, volgende_kaart, bordje):
-    yield bordje.pop(index)
     bordje.insert(index, volgende_kaart)
+    return bordje.pop(index + 1)
 
-def hide():
+def hide(next_speler):
     for i in range(2000):
         print("\n")
+    print("Speler", next_speler, "is aan de beurt")
+    input("Druk op enter...")
