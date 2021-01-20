@@ -1,5 +1,3 @@
-# TODO
-
 from secrets import randbelow
 
 def hide():
