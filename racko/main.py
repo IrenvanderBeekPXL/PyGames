@@ -19,7 +19,7 @@ def main():
     while not util.is_gewonnen(bordjes[speler]):
         speler += 1
         speler %= aantal_spelers
-        util.hide(speler)
+        util.hide_show(speler)
         for i in bordjes[speler]:
             print(i)
         print("De bovenste kaart is", bovenste_kaart)

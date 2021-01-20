@@ -17,10 +17,11 @@ def shuffle(bordjes):
 
 def is_gewonnen(bordje):
     try:
-        vorige = 0
+        vorige = bordje[0] - 1
         for i in bordje:
-            if i >= vorige:
+            if i <= vorige:
                 return False
+            vorige = i
         return True
     except IndexError:
         return False
@@ -29,7 +30,7 @@ def verander_kaart(index, volgende_kaart, bordje):
     bordje.insert(index, volgende_kaart)
     return bordje.pop(index + 1)
 
-def hide(next_speler):
+def hide_show(next_speler):
     for i in range(2000):
         print("\n")
     print("Speler", next_speler, "is aan de beurt")
