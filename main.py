@@ -1,7 +1,7 @@
 # The games programmed in here do not use the GPU and only 1 core
 
 import os
-pythongames = ["hartenjagen", "memory", "OXO", "quiz", "schaken", "zeeslag", "hangman", "MensErgerJeNiet", "MensErgerJeNietAI"]
+pythongames = ["hartenjagen", "memory", "OXO", "quiz", "schaken", "zeeslag", "hangman", "MensErgerJeNiet", "MensErgerJeNietAI", "racko"]
 javagames = ["hoogsteKaart", "UNO", "ganzenbord"]
 games = pythongames + javagames
 print("Welcome to TerminalGames")
