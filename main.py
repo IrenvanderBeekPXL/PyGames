@@ -3,7 +3,7 @@
 import os
 pythongames = ["hartenjagen", "memory", "OXO", "quiz", "schaken", "zeeslag", "hangman",
                "MensErgerJeNiet", "MensErgerJeNietAI", "racko"]
-javagames = ["hoogsteKaart", "UNO"]
+javagames = ["hoogsteKaart", "UNO", "monopoly"]
 games = pythongames + javagames
 print("Welcome to TerminalGames")
 print("Some games only work on 1920 * 1080 resolution")
