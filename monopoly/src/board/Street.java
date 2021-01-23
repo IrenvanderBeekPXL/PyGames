@@ -1,6 +1,9 @@
 package board;
 
 import errors.HouseAdditionFailedException;
+import errors.NotEnoughMoneyException;
+import errors.PlayerNotFoundException;
+import player.Player;
 
 public class Street {
     private int prijs;
@@ -9,6 +12,7 @@ public class Street {
     private boolean hypotheek = false;
     private byte houses = 0;
     private final int huisPrijs;
+    private Player eigenaar = null;
 
 
     public Street(int prijs, String naam, short plek, int huisPrijs){
@@ -68,5 +72,32 @@ public class Street {
 
     public int getHuurPrijs(){
         return getPrijs() / 20 + houses * (huisPrijs / 2);
+    }
+
+    public byte getHouses() {
+        return houses;
+    }
+
+    public int getHuisPrijs() {
+        return huisPrijs;
+    }
+
+    public Player getEigenaar() throws PlayerNotFoundException {
+        if (eigenaar != null) {
+            return eigenaar;
+        } else {
+            String msg = "Nobody bought this street yet";
+            throw new PlayerNotFoundException(msg);
+        }
+    }
+
+    public int buy(Player player) throws NotEnoughMoneyException {
+        if (player.getMoney() < getPrijs()){
+            String msg = "Player does not have money to buy this street";
+            throw new NotEnoughMoneyException(msg);
+        } else {
+            eigenaar = player;
+            return getPrijs();
+        }
     }
 }
