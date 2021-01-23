@@ -5,13 +5,13 @@ import errors.HouseAdditionFailedException;
 public class Street {
     private int prijs;
     private String naam;
-    private int plek;
+    private short plek;
     private boolean hypotheek = false;
     private byte houses = 0;
     private final int huisPrijs;
 
 
-    public Street(int prijs, String naam, int plek, int huisPrijs){
+    public Street(int prijs, String naam, short plek, int huisPrijs){
         setNaam(naam);
         setPlek(plek);
         setPrijs(prijs);
@@ -34,11 +34,11 @@ public class Street {
         this.naam = naam;
     }
 
-    public int getPlek() {
+    public short getPlek() {
         return plek;
     }
 
-    public void setPlek(int plek) {
+    public void setPlek(short plek) {
         this.plek = plek;
     }
 
