@@ -5,6 +5,8 @@ import errors.NotEnoughMoneyException;
 import errors.PlayerNotFoundException;
 import player.Player;
 
+import util.Data;
+
 public class Street {
     private int prijs;
     private String naam;
@@ -27,7 +29,7 @@ public class Street {
     }
 
     public void setPrijs(int prijs) {
-        this.prijs = prijs;
+        this.prijs = Data.respectMin(0, prijs);
     }
 
     public String getNaam() {
