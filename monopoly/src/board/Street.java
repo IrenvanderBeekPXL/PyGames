@@ -1,15 +1,21 @@
 package board;
 
-public class Street {
-    int prijs;
-    String naam;
-    int plek;
-    boolean hypotheek = false;
+import errors.HouseAdditionFailedException;
 
-    public Street(int prijs, String naam, int plek){
+public class Street {
+    private int prijs;
+    private String naam;
+    private int plek;
+    private boolean hypotheek = false;
+    private byte houses = 0;
+    private final int huisPrijs;
+
+
+    public Street(int prijs, String naam, int plek, int huisPrijs){
         setNaam(naam);
         setPlek(plek);
         setPrijs(prijs);
+        this.huisPrijs = huisPrijs;
     }
 
     public int getPrijs() {
@@ -48,5 +54,15 @@ public class Street {
     public int getOutOfHypotheek(){
         hypotheek = false;
         return getPrijs() / 2;
+    }
+
+    public int addHuis() throws HouseAdditionFailedException {
+        if (houses < 5){
+            houses += 1;
+            return huisPrijs;
+        } else {
+            String msg = "Too much houses to add one more";
+            throw new HouseAdditionFailedException(msg);
+        }
     }
 }
