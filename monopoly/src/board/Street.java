@@ -24,6 +24,11 @@ public class Street {
         this.huisPrijs = huisPrijs;
     }
 
+    public Street(short plek){
+        setPlek(plek);
+        huisPrijs = Integer.MAX_VALUE;
+    }
+
     public int getPrijs() {
         return prijs;
     }
