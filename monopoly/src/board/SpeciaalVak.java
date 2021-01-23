@@ -1,12 +1,12 @@
 package board;
 
 public class SpeciaalVak {
-    String naam;
+    private String naam;
     private int euroBijTeTellen;
-    private int beurenOverTeSlaan;
+    private byte beurenOverTeSlaan;
     private short plek;
 
-    public SpeciaalVak(String naam, int euroBijTeTellen, int beurenOverTeSlaan, short plek) {
+    public SpeciaalVak(String naam, int euroBijTeTellen, byte beurenOverTeSlaan, short plek) {
         this.naam = naam;
         this.euroBijTeTellen = euroBijTeTellen;
         this.beurenOverTeSlaan = beurenOverTeSlaan;
@@ -21,7 +21,7 @@ public class SpeciaalVak {
         return euroBijTeTellen;
     }
 
-    public int getBeurenOverTeSlaan() {
+    public byte getBeurenOverTeSlaan() {
         return beurenOverTeSlaan;
     }
 
