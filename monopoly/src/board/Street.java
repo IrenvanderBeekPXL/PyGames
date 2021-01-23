@@ -65,4 +65,8 @@ public class Street {
             throw new HouseAdditionFailedException(msg);
         }
     }
+
+    public int getHuurPrijs(){
+        return getPrijs() / 20 + houses * (huisPrijs / 2);
+    }
 }
