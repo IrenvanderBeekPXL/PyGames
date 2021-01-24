@@ -1,6 +1,8 @@
 import os
 import multiprocessing
+print("Installing and updating engine wrapper...")
 os.system("pip install stockfish")
+os.system("pip install --upgrade stockfish")
 from stockfish import Stockfish
 import platform
 treads = multiprocessing.cpu_count()
@@ -8,8 +10,8 @@ if platform.system == "Linux":
     engine = Stockfish("schaken/stockfish-linux/stockfish", parameters={"Slow Mover": 120, "Threads": treads})
 else:
     engine = Stockfish("schaken/stockfish-win/stockfish.exe", parameters={"Slow Mover": 120, "Threads": treads})
-engine.set_depth(2)
-engine.set_skill_level(2)
+engine.set_depth(30)
+engine.set_skill_level(20)
 wit = True
 moves = []
 engine.set_position(moves)
@@ -26,14 +28,12 @@ if play:
                 move = input("Zet een zet zoals e2e4  ")
             moves.append(move)
             engine.set_position(moves)
+            print("Evaluation in centipawns:", engine.get_evaluation())
             wit = False
         else:
-            engine.set_depth(20)
-            engine.set_skill_level(20)
             best_move = engine.get_best_move()
             moves.append(best_move)
             print("Mijn zet is", best_move)
             engine.set_position(moves)
-            engine.set_depth(2)
-            engine.set_skill_level(2)
+            print("Evaluation:", engine.get_evaluation())
             wit = True
