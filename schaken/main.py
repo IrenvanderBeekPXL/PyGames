@@ -54,19 +54,19 @@ if input("Do you want to analyze the last game? (Y/n)") == "Y":
     engine.set_depth(40)
     engine.set_skill_level(20)
     white = True
+    evaluation_before = engine.get_evaluation()
     for i in moves:
         engine.set_position(position)
         best_move = engine.get_best_move()
         best_moves.append(best_move)
+        position.append(i)
+        engine.set_position(position)
+        evaluation_after = engine.get_evaluation()
         if i == best_move:
             print(i, "was the best move")
             types.append("Best move")
             position.append(i)
         else:
-            evaluation_before = engine.get_evaluation()
-            position.append(i)
-            engine.set_position(position)
-            evaluation_after = engine.get_evaluation()
             if evaluation_after.get("type") == "cp" and evaluation_before.get("type") == "cp":
                 if white:
                     if evaluation_after.get("value") >= evaluation_before.get("value"):
@@ -124,3 +124,4 @@ if input("Do you want to analyze the last game? (Y/n)") == "Y":
 
             print(best_move, "was the best move")
         white = not white
+        evaluation_before = evaluation_after
