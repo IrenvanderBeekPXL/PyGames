@@ -10,7 +10,7 @@ if platform.system == "Linux":
     engine = Stockfish("schaken/stockfish-linux/stockfish", parameters={"Slow Mover": 120, "Threads": treads})
 else:
     engine = Stockfish("schaken/stockfish-win/stockfish.exe", parameters={"Slow Mover": 120, "Threads": treads})
-engine.set_depth(30)
+engine.set_depth(35)
 engine.set_skill_level(20)
 wit = True
 moves = []
@@ -51,7 +51,7 @@ if input("Do you want to analyze the last game? (Y/n)") == "Y":
     position = []
     best_moves = []
     types = []
-    engine.set_depth(30)
+    engine.set_depth(40)
     engine.set_skill_level(20)
     white = True
     for i in moves:
