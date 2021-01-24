@@ -27,14 +27,12 @@ if input("Do you want to play or load in a game? (play/load)").lower() == "play"
                 move = input("Zet een zet zoals e2e4  ")
             moves.append(move)
             engine.set_position(moves)
-            print("Evaluation in centipawns:", engine.get_evaluation())
             wit = False
         else:
             best_move = engine.get_best_move()
             moves.append(best_move)
             print("Mijn zet is", best_move)
             engine.set_position(moves)
-            print("Evaluation:", engine.get_evaluation())
             wit = True
 else:
     print("Please give me the series of moves.")
