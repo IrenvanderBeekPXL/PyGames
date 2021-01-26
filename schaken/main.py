@@ -36,11 +36,8 @@ if input("Do you want to play or load in a game? (play/load)").lower() == "play"
             wit = True
 else:
     print("Please give me the series of moves.")
-    print("Press enter with a move to give me the move and \nwithout a move to load in")
-    move = input()
-    while len(move) != 0:
-        moves.append(move)
-        move = input()
+    print("Press space with a move to give me the move and \nenter without a move to load in")
+    moves = input().split()
     engine.set_position(moves)
 if input("Do you want to analyze the last game? (Y/n)") == "Y":
     input("WARNING! Analyzing could take a whole day for a long game. Press enter to continue...")
@@ -49,7 +46,7 @@ if input("Do you want to analyze the last game? (Y/n)") == "Y":
     position = []
     best_moves = []
     types = []
-    engine.set_depth(40)
+    engine.set_depth(35)
     engine.set_skill_level(20)
     white = True
     evaluation_before = engine.get_evaluation()
@@ -67,26 +64,26 @@ if input("Do you want to analyze the last game? (Y/n)") == "Y":
         else:
             if evaluation_after.get("type") == "cp" and evaluation_before.get("type") == "cp":
                 if white:
-                    if evaluation_after.get("value") >= evaluation_before.get("value"):
+                    if evaluation_after.get("value") >= evaluation_before.get("value") - 10:
                         print(i, "was a good move")
                         types.append("Good move")
-                    elif evaluation_after.get("value") - 100 >= evaluation_before.get("value"):
+                    elif evaluation_after.get("value") >= evaluation_before.get("value") - 100:
                         types.append("Not that bad")
                         print(i, "was not so good, but also not bad")
-                    elif evaluation_after.get("value") - 700 >= evaluation_before.get("value"):
+                    elif evaluation_after.get("value") >= evaluation_before.get("value") - 700:
                         types.append("Bad move")
                         print(i, "was a bad move")
                     else:
                         types.append("Blunder")
                         print(i, "was a blundery blunder")
                 else:
-                    if evaluation_after.get("value") <= evaluation_before.get("value"):
+                    if evaluation_after.get("value") <= evaluation_before.get("value") + 10:
                         print(i, "was a good move")
                         types.append("Good move")
-                    elif evaluation_after.get("value") + 100 <= evaluation_before.get("value"):
+                    elif evaluation_after.get("value") <= evaluation_before.get("value") + 100:
                         types.append("Not that bad")
                         print(i, "was not so good, but also not bad")
-                    elif evaluation_after.get("value") + 700 <= evaluation_before.get("value"):
+                    elif evaluation_after.get("value") <= evaluation_before.get("value") + 700:
                         types.append("Bad move")
                         print(i, "was a bad move")
                     else:
