@@ -27,6 +27,8 @@ public class Street {
     public Street(short plek){
         setPlek(plek);
         huisPrijs = Integer.MAX_VALUE;
+        prijs = Integer.MAX_VALUE;
+        naam = null;
     }
 
     public int getPrijs() {
@@ -106,5 +108,21 @@ public class Street {
             eigenaar = player;
             return getPrijs();
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null) return false;
+        if (this == o) return true;
+        if (!(o instanceof Street)) return false;
+
+        Street street = (Street) o;
+
+        return getPlek() == street.getPlek();
+    }
+
+    @Override
+    public int hashCode() {
+        return getPlek();
     }
 }

@@ -2,6 +2,7 @@ package board;
 
 import errors.AlreadyInisializedException;
 import player.Player;
+import util.Data;
 
 public class Board {
     private Street[] straten = null;
@@ -38,5 +39,21 @@ public class Board {
 
     public short getLengte() {
         return lengte;
+    }
+
+    public String toString(){
+        StringBuilder returnValue = new StringBuilder();
+        short streetIndex = 0;
+        short specialIndex = 0;
+        for (short i = 0; i < 10; i++) {
+            if (Data.searchForInArray(straten, new Street(i)) == -1){
+                try {
+                    throw new Throwable();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                }
+            }
+        }
+        return returnValue.toString();
     }
 }

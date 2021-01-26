@@ -72,7 +72,7 @@ public abstract class Data {
 
     public static int searchForInArray(Object[] array, Object searchFor, int startFrom) {
         for (int i = startFrom; i < array.length; i++) {
-            if (array[i] == searchFor){
+            if (array[i].equals(searchFor)){
                 return i;
             }
         }

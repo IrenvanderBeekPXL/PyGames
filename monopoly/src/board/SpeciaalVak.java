@@ -13,6 +13,10 @@ public class SpeciaalVak {
         this.plek = plek;
     }
 
+    public SpeciaalVak(short plek){
+        this(null, 0, (byte) 0, plek);
+    }
+
     public String getNaam() {
         return naam;
     }
@@ -27,5 +31,21 @@ public class SpeciaalVak {
 
     public short getPlek() {
         return plek;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null) return false;
+        if (this == o) return true;
+        if (!(o instanceof SpeciaalVak)) return false;
+
+        SpeciaalVak that = (SpeciaalVak) o;
+
+        return getPlek() == that.getPlek();
+    }
+
+    @Override
+    public int hashCode() {
+        return getPlek();
     }
 }
