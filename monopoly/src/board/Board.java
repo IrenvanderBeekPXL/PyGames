@@ -47,11 +47,11 @@ public class Board {
         short specialIndex = 0;
         for (short i = 0; i < 10; i++) {
             if (Data.searchForInArray(straten, new Street(i)) == -1){
-                try {
-                    throw new Throwable();
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                }
+                returnValue.append(String.format("%-20s", speciaal[specialIndex].getNaam()));
+                specialIndex++;
+            } else {
+                returnValue.append(String.format("%-20s", straten[streetIndex].getNaam()));
+                streetIndex++;
             }
         }
         return returnValue.toString();
