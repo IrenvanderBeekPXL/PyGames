@@ -54,6 +54,19 @@ public class Board {
                 streetIndex++;
             }
         }
+        streetIndex = 0;
+        specialIndex = 0;
+        returnValue.append(String.format("%n"));
+        for (short i = 0; i < 10; i++) {
+            if (Data.searchForInArray(straten, new Street(i)) == -1){
+                returnValue.append(String.format("%-20s", speciaal[specialIndex].getEuroBijTeTellen()));
+                specialIndex++;
+            } else {
+                returnValue.append(String.format("%-20s", straten[streetIndex].getPrijs()));
+                streetIndex++;
+            }
+        }
+        returnValue.append(String.format("%n"));
         return returnValue.toString();
     }
 }

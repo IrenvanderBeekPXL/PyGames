@@ -6,11 +6,11 @@ public class SpeciaalVak {
     private byte beurenOverTeSlaan;
     private short plek;
 
-    public SpeciaalVak(String naam, int euroBijTeTellen, byte beurenOverTeSlaan, short plek) {
+    public SpeciaalVak(String naam, int euroBijTeTellen, int beurenOverTeSlaan, int plek) {
         this.naam = naam;
         this.euroBijTeTellen = euroBijTeTellen;
-        this.beurenOverTeSlaan = beurenOverTeSlaan;
-        this.plek = plek;
+        this.beurenOverTeSlaan = (byte) beurenOverTeSlaan;
+        this.plek = (short) plek;
     }
 
     public SpeciaalVak(short plek){

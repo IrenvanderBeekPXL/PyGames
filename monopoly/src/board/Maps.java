@@ -3,14 +3,13 @@ package board;
 import errors.AlreadyInisializedException;
 
 public enum Maps {
-    Nederland(null, null);
+    NULL(null, null);
     private final Street[] straten;
     private final SpeciaalVak[] speciaal;
 
     Maps(Street[] straten, SpeciaalVak[] speciaal) {
         this.straten = straten;
         this.speciaal = speciaal;
-        
     }
 
     public Street[] getStraten() {

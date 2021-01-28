@@ -17,9 +17,9 @@ public class Street {
     private Player eigenaar = null;
 
 
-    public Street(int prijs, String naam, short plek, int huisPrijs){
+    public Street(int prijs, String naam, int plek, int huisPrijs){
         setNaam(naam);
-        setPlek(plek);
+        setPlek((short) plek);
         setPrijs(prijs);
         this.huisPrijs = huisPrijs;
     }
