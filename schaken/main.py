@@ -1,6 +1,8 @@
 import os
 import multiprocessing
+print("Installing and updating engine wrapper...")
 os.system("pip install stockfish")
+os.system("pip install --upgrade stockfish")
 from stockfish import Stockfish
 import platform
 treads = multiprocessing.cpu_count()
@@ -8,13 +10,12 @@ if platform.system == "Linux":
     engine = Stockfish("schaken/stockfish-linux/stockfish", parameters={"Slow Mover": 120, "Threads": treads})
 else:
     engine = Stockfish("schaken/stockfish-win/stockfish.exe", parameters={"Slow Mover": 120, "Threads": treads})
-engine.set_depth(2)
-engine.set_skill_level(2)
+engine.set_depth(35)
+engine.set_skill_level(20)
 wit = True
 moves = []
 engine.set_position(moves)
-play = True
-if play:
+if input("Do you want to play or load in a game? (play/load)").lower() == "play":
     input("WARNING. This chess program is about as strong as it gets. Press enter to continue...")
     while engine.get_best_move_time(3000) is not None:
         if wit:
@@ -28,12 +29,94 @@ if play:
             engine.set_position(moves)
             wit = False
         else:
-            engine.set_depth(20)
-            engine.set_skill_level(20)
             best_move = engine.get_best_move()
             moves.append(best_move)
             print("Mijn zet is", best_move)
             engine.set_position(moves)
-            engine.set_depth(2)
-            engine.set_skill_level(2)
             wit = True
+else:
+    print("Please give me the series of moves.")
+    print("Press space with a move to give me the move and \nenter without a move to load in")
+    moves = input().split()
+    engine.set_position(moves)
+if input("Do you want to analyze the last game? (Y/n)") == "Y":
+    input("WARNING! Analyzing could take a whole day for a long game. Press enter to continue...")
+    print("If you run this on a laptop, please plug it in an electricity outlet.")
+    print("Analyzing...")
+    position = []
+    best_moves = []
+    types = []
+    engine.set_depth(35)
+    engine.set_skill_level(20)
+    white = True
+    evaluation_before = engine.get_evaluation()
+    for i in moves:
+        engine.set_position(position)
+        best_move = engine.get_best_move()
+        best_moves.append(best_move)
+        position.append(i)
+        engine.set_position(position)
+        evaluation_after = engine.get_evaluation()
+        if i == best_move:
+            print(i, "was the best move")
+            types.append("Best move")
+            position.append(i)
+        else:
+            if evaluation_after.get("type") == "cp" and evaluation_before.get("type") == "cp":
+                if white:
+                    if evaluation_after.get("value") >= evaluation_before.get("value") - 10:
+                        print(i, "was a good move")
+                        types.append("Good move")
+                    elif evaluation_after.get("value") >= evaluation_before.get("value") - 100:
+                        types.append("Not that bad")
+                        print(i, "was not so good, but also not bad")
+                    elif evaluation_after.get("value") >= evaluation_before.get("value") - 700:
+                        types.append("Bad move")
+                        print(i, "was a bad move")
+                    else:
+                        types.append("Blunder")
+                        print(i, "was a blundery blunder")
+                else:
+                    if evaluation_after.get("value") <= evaluation_before.get("value") + 10:
+                        print(i, "was a good move")
+                        types.append("Good move")
+                    elif evaluation_after.get("value") <= evaluation_before.get("value") + 100:
+                        types.append("Not that bad")
+                        print(i, "was not so good, but also not bad")
+                    elif evaluation_after.get("value") <= evaluation_before.get("value") + 700:
+                        types.append("Bad move")
+                        print(i, "was a bad move")
+                    else:
+                        types.append("Blunder")
+                        print(i, "was a blundery blunder")
+            elif evaluation_before.get("type") == "mate":
+                print("Forced mate before and after")
+                types.append("Nothing")
+            elif evaluation_after.get("type") == "mate":
+                if not white:
+                    if evaluation_before.get("value") > 6000:
+                        types.append("Not that bad")
+                        print(i, "was not so good, but also not bad")
+                    elif evaluation_before.get("value") > 2500:
+                        types.append("Bad move")
+                        print(i, "was a bad move")
+                    else:
+                        types.append("Blunder")
+                        print(i, "was a blundery blunder")
+                else:
+                    if evaluation_before.get("value") < -6000:
+                        types.append("Not that bad")
+                        print(i, "was not so good, but also not bad")
+                    elif evaluation_before.get("value") < -2500:
+                        types.append("Bad move")
+                        print(i, "was a bad move")
+                    else:
+                        types.append("Blunder")
+                        print(i, "was a blundery blunder")
+            else:
+                print("I don't know what is happening with", i)
+                types.append(None)
+
+            print(best_move, "was the best move")
+        white = not white
+        evaluation_before = evaluation_after
