@@ -16,4 +16,13 @@ public class Bord {
         volgendeRij.check(nodig);
         return volgendeRij.toString();
     }
+
+    public String toString(){
+        StringBuilder output = new StringBuilder();
+        for (Rij rij : raadrijen) {
+            output.append(rij);
+            output.append(String.format("%n"));
+        }
+        return output.toString();
+    }
 }
