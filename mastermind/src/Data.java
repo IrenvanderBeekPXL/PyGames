@@ -1,4 +1,8 @@
+import java.util.ArrayList;
+import java.util.Random;
+
 public abstract class Data {
+    private static final Random random = new Random();
     public static int minMax(int min, int max, int value){
         if (value < min){
             value = min;
@@ -75,5 +79,19 @@ public abstract class Data {
             }
         }
         return -1;
+    }
+
+    public static int randomNumber(int min, int max){
+        return random.nextInt(max - min + 1) + min;
+    }
+
+    public static void printArray(Object[] array){
+        for (Object i : array) {
+            System.out.println(i);
+        }
+    }
+
+    public static void printArray(ArrayList<?> array){
+        printArray(array.toArray());
     }
 }
