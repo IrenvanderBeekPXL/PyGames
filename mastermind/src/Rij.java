@@ -2,6 +2,14 @@ public class Rij {
     private Kleur[] kleuren; // lengte 4
     private Boolean[] goed;
 
+    public Rij(Kleur[] kleuren) {
+        setKleuren(kleuren);
+    }
+
+    public Rij() {
+
+    }
+
     public void setKleuren(Kleur... kleuren) {
         this.kleuren = kleuren;
         goed = new Boolean[kleuren.length];
